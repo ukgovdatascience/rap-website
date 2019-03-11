@@ -1,0 +1,11 @@
+---
+title: Page not found
+permalink: /404.html
+---
+
+If you typed the web address, check it is correct.
+
+If you pasted the web address, check you copied the entire address.
+
+Contact the Reproducible Analytical Pipelines team if you believe you are seeing
+this message in error.

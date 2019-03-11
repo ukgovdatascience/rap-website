@@ -1,0 +1,42 @@
+---
+title: Packaging Code
+---
+
+A package enshrines all the business knowledge used to create a corpus of work in one place; including the code and its relevant documentation.
+
+One of the difficulties that can arise in the more manual methods of statistics production is that we have many different files relating to many different stages of the process, each of which needs to be documented, and kept up to date. Part of the heavy lifting can be done here with version control as described in Chapter \@ref(vs), but we can go a step further: we can create a package of code. As Hadley Wickham (author of a number of essential packages for package development) puts it for R:
+
+> Packages are the fundamental units of reproducible R code. They include reusable R functions, the documentation that describes how to use them, and sample data.
+- Hadley Wickham
+
+Since it is a matter of statute that we produce our statistical publications, it is essential that our publications are as reproducible as possible. Packaging up the code can also help with institutional knowledge transfer. This was exemplified in Chapter \@ref(exemplar) where we explored help files associated with code using the R `?` function.
+
+```{r eval=FALSE}
+library(eesectors)
+?clean_sic()
+```
+
+
+Linking the documentation to the code makes everything much easier to understand, and can help to minimising the time taken to bring new team members up to speed. This all meets the requirements of the [AQUA](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) book in that all assumptions and constraints can be described in the package documentation asssociated tied to the relevant code.
+
+## Essential reading
+
+Hadley Wickham's [R Packages](http://r-pkgs.had.co.nz/) book is an excellent and comprehensive introduction to developing your own package in R. It encourages you to start with the basics and improve over time; good advice.
+
+## Development best practices for your package
+
+### Licensing your code
+
+Developing your code as an R package will require you to specify a license for your code in the DESCRIPTION file (for example the [eesectors](https://github.com/DCMSstats/eesectors/blob/master/DESCRIPTION) package uses the GPL-3 license). We quote the [GDS Service Manual](https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable#licensing-your-code) by encouraging the use of an [Open Source Initiative](https://opensource.org/licenses) compatible licence. For example, GDS uses the [MIT licence](https://github.com/alphagov/styleguides/blob/master/licensing.md).
+
+It is also of note that all code produced by civil servants is automatically covered by [Crown Copyright](http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
+
+### Acting as the custodian for your code
+
+When you make your code open, you should:
+
+* use [Semantic Versioning](https://semver.org/) to make it clear when you release an update to your code
+* be clear about how you’ll communicate with users of your code, for example on support channels and email lists
+
+Encouraging contributions from people who use your code can help make your code more robust, as people will spot bugs and suggest new features. If you would like to encourage contributions, you can create a [CONTRIBUTING.md](https://github.com/blog/1184-contributing-guidelines) file on Github, like we [demonstrate for this book](https://github.com/ukgovdatascience/rap_companion/blob/master/CONTRIBUTING.md).
+

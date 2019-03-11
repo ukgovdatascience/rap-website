@@ -1,0 +1,14 @@
+---
+title: "RAP Blog"
+---
+
+Some blog posts are on external sites.
+
+<ul class="govuk-list">
+  <li>
+    [Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/)
+  </li>
+  <li>
+    [Transforming the process of producing official statistics](https://dataingovernment.blog.gov.uk/2017/11/27/transforming-the-process-of-producing-official-statistics/)
+  </li>
+</ul>

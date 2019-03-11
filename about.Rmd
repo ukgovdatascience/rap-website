@@ -1,0 +1,11 @@
+---
+title: "About This Website"
+---
+
+This website is under construction.
+
+## Attribution
+
+The warp pipe logo by http://delapouite.com/ was obtained from
+https://game-icons.net/1x1/delapouite/warp-pipe.html licensed CC BY 3.0
+http://creativecommons.org/licenses/by/3.0/ and is used unaltered.

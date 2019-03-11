@@ -1,0 +1,130 @@
+---
+title: "GOV.UK-style R Markdown"
+---
+
+::: {.lead-para}
+With the [govdown](https://github.com/ukgovdatascience/govdown) package you can
+render [RMarkdown](https://rmarkdown.rstudio.com/) documents to look like
+GOV.UK pages.  It only supports rendering to HTML.  This is a lead paragraph.
+Use one lead paragraph at the top of the page.
+:::
+
+Compare the real [Tax your vehicle page](https://www.gov.uk/vehicle-tax) with [a
+replica](tax-your-vehicle.html).
+
+Normal text looks like this.
+
+::: {.small-para}
+Small text looks like this.
+:::
+
+Text can be *italic*, **bold**, and both ***bold and italic***.
+
+[This is a normal hyperlink](https://design-system.service.gov.uk).
+
+[This hyperlink doesn't turn purple when you have visited it](https://design-system.service.gov.uk){.govuk-link--no-visited-state}.
+
+* First bullet
+	* Nested bullets are available but are not supported by the GOV.UK Design
+    System
+* Second bullet
+* Third bullet
+
+1. Numbered list item
+1. Second numbered list item
+    1. Nested numbered list items are not supported by the GOV.UK Design System.
+1. Third numbered list item
+
+Lists without bullets are not supported because I don't know how to work it in
+lua, so you have to use [raw
+HTML](https://design-system.service.gov.uk/styles/typography/#lists).
+
+<ul class="govuk-list">
+  <li>
+    <a>Unbulleted item one</a>
+  </li>
+  <li>
+    <a>Unbulleted item two</a>
+  </li>
+  <li>
+    <a>Unbullted item three</a>
+  </li>
+</ul>
+
+The default section break `---` is the largest one available.  For other sizes
+use the [raw
+HTML](https://design-system.service.gov.uk/styles/typography/#section-break)
+because pandoc doesn't support classes for this element.
+
+---
+
+Quotations look like the one below.
+
+> United wishes and good will cannot overcome brute facts.  Truth is
+> incontrovertible. Panic may resent it. Ignorance may deride it. Malice may
+> distort it. But there it is.
+
+# govuk header xl {caption="govuk caption xl"}
+
+The header above is the largest available and is used for the title set in the
+yaml, e.g.
+
+```yaml
+      ---
+title: This will be set in govuk header xl
+---
+```
+
+## govuk header l with *italic* {caption="govuk caption l"}
+
+Body text.
+
+### govuk header m with **bold** {caption="govuk caption m"}
+
+Body text.
+
+#### govuk header s {caption="govuk caption s"}
+
+Body text.  There is no small caption.
+
+Here's some inline mathjax $\sum_0^{2e} \alpha_i \mathrm{dt}$.
+Here's some block mathjax
+
+$$
+\begin{align}
+s_i & \sim \mathrm{Binomial}(n_i, p_i) \\
+\mathrm{logit}(p_i) & = \alpha_{\small{TANK}[i]} \\
+\alpha_{\small{TANK}} & \sim \mathrm{Normal}(0, 5)
+\end{align}
+$$
+
+You can have R code that executes.
+
+```{r r-chunk}
+head(mtcars)
+plot(mtcars$cyl, mtcars$mpg)
+```
+
+You can also have Python code that executes.
+
+```{python python-chunk}
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(0.0, 2, 0.01)
+y1 = np.sin(2 * np.pi * x)
+y2 = 1.2 * np.sin(4 * np.pi * x)
+
+fig, (ax1, ax2, ax3) = plt.subplots(3, 1, sharex=True)
+
+ax1.fill_between(x, 0, y1)
+ax1.set_ylabel('between y1 and 0')
+
+ax2.fill_between(x, y1, 1)
+ax2.set_ylabel('between y1 and 1')
+
+ax3.fill_between(x, y1, y2)
+ax3.set_ylabel('between y1 and y2')
+ax3.set_xlabel('x')
+```
+

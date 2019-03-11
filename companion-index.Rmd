@@ -1,0 +1,19 @@
+---
+title: "RAP Companion"
+---
+
+1. [Preface](rap-companion-00-preface.html)
+1. [Introduction](rap-companion-01-introduction.html)
+1. [Ethics](rap-companion-02-ethics.html)
+1. [Why](rap-companion-03-why.html)
+1. [Exemplar](rap-companion-04-exemplar.html)
+1. [Open source](rap-companion-05-open-source.html)
+1. [Version control](rap-companion-06-version-control.html)
+1. [Package code](rap-companion-07-packaging-code.html)
+1. [Unit testing](rap-companion-08-unit-testing.html)
+1. [Automated testing](rap-companion-09-automated-testing.html)
+1. [Code coverage](rap-companion-10-code-coverage.html)
+1. [Dependency and reproducibility](rap-companion-11-dependency-and-reproducibility.html)
+1. [Quality assurance](rap-companion-12-quality-assurance.html)
+1. [Publishing](rap-companion-13-publishing.html)
+1. [Final thoughts](rap-companion-14-final-thoughts.html)
