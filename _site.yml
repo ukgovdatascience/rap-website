@@ -1,3 +1,4 @@
+output_dir: docs
 navbar:
   logo: "images/warp-pipe.svg"
   title: "RAP"
