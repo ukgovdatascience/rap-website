@@ -1,6 +1,6 @@
 output_dir: docs
 navbar:
-  logo: "images/warp-pipe.svg"
+  logo: "images/warp-pipe-white-on-transparent.svg"
   title: "RAP"
   homepage: "https://ukgovdatascience.github.io/rap-website"
   service_name: "Reproducible Analytical Pipelines"
