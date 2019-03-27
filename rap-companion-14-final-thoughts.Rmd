@@ -1,6 +1,10 @@
----
-title: Final Thoughts
----
+::: {.breadcrumbs}
+* [Home](index.html)
+* [Companion](companion-index.html)
+* Final Thoughts
+:::
+
+# Final Thoughts
 
 It's called Data Science for a reason, record all the data handling, experimentation and analysis in your [lab-notebook](http://colinpurrington.com/tips/lab-notebooks).
 

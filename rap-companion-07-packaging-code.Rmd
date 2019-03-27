@@ -1,6 +1,10 @@
----
-title: Packaging Code
----
+::: {.breadcrumbs}
+* [Home](index.html)
+* [Companion](companion-index.html)
+* Packaging code
+:::
+
+# Packaging code
 
 A package enshrines all the business knowledge used to create a corpus of work in one place; including the code and its relevant documentation.
 

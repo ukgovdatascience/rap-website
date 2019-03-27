@@ -1,6 +1,10 @@
----
-title: Why RAP?
----
+::: {.breadcrumbs}
+* [Home](index.html)
+* [Companion](companion-index.html)
+* Why RAP?
+:::
+
+# Why RAP?
 
 Reproducible Analytical Pipelines require a range of tools and techniques to implement that can be a challenge to overcome; so why bother learning to RAP?
 

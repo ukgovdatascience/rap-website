@@ -1,6 +1,10 @@
----
-title: Preface
----
+::: {.breadcrumbs}
+* [Home](index.html)
+* [Companion](companion-index.html)
+* Preface
+:::
+
+# Preface
 
 ```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://commons.wikimedia.org/wiki/File:Warp_pipe_edited.PNG'}
 knitr::include_graphics('images/cover.png', dpi = NA)

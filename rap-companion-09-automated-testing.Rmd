@@ -1,6 +1,10 @@
----
-title: Automated testing
----
+::: {.breadcrumbs}
+* [Home](index.html)
+* [Companion](companion-index.html)
+* Automated testing
+:::
+
+# Automated testing
 
 Once we are in the habit of packaging our code and writing unit tests, we can start to use free online tools such as [Travis CI](https://travis-ci.org/), [Jenkins](https://jenkins.io/), or [Appveyor](https://www.appveyor.com/) to automatically test that our package of code builds, and that the tests we have written, pass.
 

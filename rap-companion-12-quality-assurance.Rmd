@@ -1,6 +1,10 @@
----
-title: Quality assurance of the pipeline
----
+::: {.breadcrumbs}
+* [Home](index.html)
+* [Companion](companion-index.html)
+* Quality assurance of the pipeline
+:::
+
+# Quality assurance of the pipeline
 
 All the testing we have described so far is to do with the code, and ensuring that the code does what we expect it to, but because we have written an [R package](https://github.com/ukgovdatascience/eesectors), it’s also very easy for us to institute tests for the consistency of the data at the time the data is loaded. We may also wish to employ defensive programming against potential errors and consider how we might want to flag these for the user and / or how our pipeline might recover from such errors.
 

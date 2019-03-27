@@ -1,6 +1,10 @@
----
-title: Version control
----
+::: {.breadcrumbs}
+* [Home](index.html)
+* [Companion](companion-index.html)
+* Version control
+:::
+
+# Version control
 
 ## Introduction
 

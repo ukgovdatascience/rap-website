@@ -3886,11 +3886,6 @@ color: #d14;
                   Blog
                 </a>
               </li>            <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="govdown.html">
-                  <!-- link name -->
-                  Govdown
-                </a>
-              </li>            <li class="govuk-header__navigation-item">
                 <a class="govuk-header__link" href="about.html">
                   <!-- link name -->
                   About
@@ -3931,8 +3926,21 @@ color: #d14;
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper " id="main-content" role="main">
-            <h1 class="govuk-heading-xl">Quality assurance of the pipeline</h1>
-            <p><span class="govuk-body">All the testing we have described so far is to do with the code, and ensuring that the code does what we expect it to, but because we have written an <a href="https://github.com/ukgovdatascience/eesectors" class="govuk-link">R package</a>, it’s also very easy for us to institute tests for the consistency of the data at the time the data is loaded. We may also wish to employ defensive programming against potential errors and consider how we might want to flag these for the user and / or how our pipeline might recover from such errors.</span></p>
+            <div class="govuk-breadcrumbs">
+<ol class="govuk-breadcrumbs__list">
+<li class="govuk-breadcrumbs__list-item">
+<a href="index.html" class="govuk-breadcrumbs__link govuk-link">Home</a>
+</li>
+<li class="govuk-breadcrumbs__list-item">
+<a href="companion-index.html" class="govuk-breadcrumbs__link govuk-link">Companion</a>
+</li>
+<li class="govuk-breadcrumbs__list-item">
+Quality assurance of the pipeline
+</li>
+</ol>
+</div>
+<h1 class="govuk-heading-xl">Quality assurance of the pipeline</h1>
+<p><span class="govuk-body">All the testing we have described so far is to do with the code, and ensuring that the code does what we expect it to, but because we have written an <a href="https://github.com/ukgovdatascience/eesectors" class="govuk-link">R package</a>, it’s also very easy for us to institute tests for the consistency of the data at the time the data is loaded. We may also wish to employ defensive programming against potential errors and consider how we might want to flag these for the user and / or how our pipeline might recover from such errors.</span></p>
 <h2 class="govuk-heading-l">Testing the input data</h2>
 <p><span class="govuk-body">If our RAP were a sausage factory, the data would be the input meat. Given we do not own the input data nor are we responsible for its preparation we should plan for how we can protect our pipeline against a change in input data format or any anomalous data therein.</span></p>
 <p><span class="govuk-body">The list of tests that we might want to run is endless, and the scope of tests very much be dictated by the team which has the expert knowledge of the data. In the <a href="https://github.com/ukgovdatascience/eesectors" class="govuk-link">eesectors</a> package we implemented two very simple checks, but these could very easily be expanded. The simplest of these is a simple test for outliers: since the data for the economic estimates is longitudinal, i.e. stretching back several years; we are able to look at the most recent values in comparison to the values from previous years. If the latest values lie within a threshold determined statistically from the other values then the data passes, if not a warning is raised.</span></p>
@@ -4011,9 +4019,9 @@ color: #d14;
 <a class="sourceLine" id="cb10-2" title="2"></a>
 <a class="sourceLine" id="cb10-3" title="3">futile.logger<span class="op">::</span><span class="kw">flog.debug</span>(<span class="st">&quot;This won&#39;t print&quot;</span>)</a>
 <a class="sourceLine" id="cb10-4" title="4">futile.logger<span class="op">::</span><span class="kw">flog.info</span>(<span class="st">&quot;But this %s&quot;</span>, <span class="st">&#39;will&#39;</span>)</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>## INFO [2019-03-27 18:25:41] But this will</code></pre>
+<pre class="app-tabs__container js-tabs__container"><code>## INFO [2019-03-27 18:40:53] But this will</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">futile.logger<span class="op">::</span><span class="kw">flog.warn</span>(<span class="st">&quot;As will %s&quot;</span>, <span class="st">&#39;this&#39;</span>)</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>## WARN [2019-03-27 18:25:41] As will this</code></pre>
+<pre class="app-tabs__container js-tabs__container"><code>## WARN [2019-03-27 18:40:53] As will this</code></pre>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;sport&quot;</span>, <span class="ot">NA</span>)</a>
 <a class="sourceLine" id="cb14-2" title="2"></a>
 <a class="sourceLine" id="cb14-3" title="3">  <span class="kw">message</span>(<span class="st">&#39;Checking x does not contain missing values...&#39;</span>)</a>
@@ -4030,11 +4038,11 @@ color: #d14;
 <a class="sourceLine" id="cb15-9" title="9">    futile.logger<span class="op">::</span><span class="kw">flog.error</span>(<span class="st">&quot;x cannot contain any missing values.&quot;</span>,</a>
 <a class="sourceLine" id="cb15-10" title="10">               x, <span class="dt">capture =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb15-11" title="11">  }</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>## ERROR [2019-03-27 18:25:41] x cannot contain any missing values.
+<pre class="app-tabs__container js-tabs__container"><code>## ERROR [2019-03-27 18:40:53] x cannot contain any missing values.
 ## 
 ## [1] &quot;culture&quot; &quot;sport&quot;   NA</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1">futile.logger<span class="op">::</span><span class="kw">flog.info</span>(<span class="st">&quot;Finished checks.&quot;</span>)</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>## INFO [2019-03-27 18:25:41] Finished checks.</code></pre>
+<pre class="app-tabs__container js-tabs__container"><code>## INFO [2019-03-27 18:40:53] Finished checks.</code></pre>
 <p><span class="govuk-body">The above example can help the user identify where the pipeline is going wrong by logging the error and capturing the object <code>x</code> where the data is missing. This allows us to more quickly track down what’s going wrong.</span></p>
 <h3 class="govuk-heading-m">Logging to file</h3>
 <p><span class="govuk-body">At the moment we default to writing our log to the console. We could write to a file if interested using the <code>appender</code> family of functions.</span></p>

@@ -1,6 +1,10 @@
----
-title: Unit testing
----
+::: {.breadcrumbs}
+* [Home](index.html)
+* [Companion](companion-index.html)
+* Unit testing
+:::
+
+# Unit testing
 
 Testing is a vital part of package development. It ensures that your code does what you want it to do. We can facilitate testing and Quality Assurance (QA) by building packages with generalisable LEGO-like functions.
 

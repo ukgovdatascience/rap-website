@@ -1,6 +1,10 @@
----
-title: Dependency and reproducibility
----
+::: {.breadcrumbs}
+* [Home](index.html)
+* [Companion](companion-index.html)
+* Dependency and reproducibility
+:::
+
+# Dependency and reproducibility
 
 _This section is in development. Please [contribute to the discussion](https://github.com/ukgovdatascience/rap_companion/issues/89)._
 

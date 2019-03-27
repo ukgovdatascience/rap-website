@@ -1,6 +1,10 @@
----
-title: Exemplar RAP
----
+::: {.breadcrumbs}
+* [Home](index.html)
+* [Companion](companion-index.html)
+* Exemplar RAP
+:::
+
+# Exemplar RAP
 
 Chapter \@ref(why) considered why RAP is a useful paradigm.
 
