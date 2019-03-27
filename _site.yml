@@ -11,12 +11,10 @@ navbar:
       href: companion-index.html
     - text: "Blog"
       href: blog.html
-    - text: "Govdown"
-      href: govdown.html
     - text: "About"
       href: about.html
 output:
-  govdown::govuk_document:
+  govdown::govdown_document:
     font: "sans-serif"
     phase: alpha
     feedback_url: "https://github.com/ukgovdatascience/rap-website/issues"
