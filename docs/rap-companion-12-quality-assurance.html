@@ -3881,14 +3881,14 @@ color: #d14;
                   Companion
                 </a>
               </li>            <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="blog.html">
+                <a class="govuk-header__link" href="articles.html">
                   <!-- link name -->
-                  Blog
+                  Articles
                 </a>
               </li>            <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="about.html">
+                <a class="govuk-header__link" href="blog.html">
                   <!-- link name -->
-                  About
+                  Blog Posts
                 </a>
               </li>
             </ul>
@@ -4019,9 +4019,9 @@ Quality assurance of the pipeline
 <a class="sourceLine" id="cb10-2" title="2"></a>
 <a class="sourceLine" id="cb10-3" title="3">futile.logger<span class="op">::</span><span class="kw">flog.debug</span>(<span class="st">&quot;This won&#39;t print&quot;</span>)</a>
 <a class="sourceLine" id="cb10-4" title="4">futile.logger<span class="op">::</span><span class="kw">flog.info</span>(<span class="st">&quot;But this %s&quot;</span>, <span class="st">&#39;will&#39;</span>)</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>## INFO [2019-03-29 09:09:00] But this will</code></pre>
+<pre class="app-tabs__container js-tabs__container"><code>## INFO [2019-03-29 11:05:23] But this will</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">futile.logger<span class="op">::</span><span class="kw">flog.warn</span>(<span class="st">&quot;As will %s&quot;</span>, <span class="st">&#39;this&#39;</span>)</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>## WARN [2019-03-29 09:09:00] As will this</code></pre>
+<pre class="app-tabs__container js-tabs__container"><code>## WARN [2019-03-29 11:05:23] As will this</code></pre>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;culture&quot;</span>, <span class="st">&quot;sport&quot;</span>, <span class="ot">NA</span>)</a>
 <a class="sourceLine" id="cb14-2" title="2"></a>
 <a class="sourceLine" id="cb14-3" title="3">  <span class="kw">message</span>(<span class="st">&#39;Checking x does not contain missing values...&#39;</span>)</a>
@@ -4038,11 +4038,11 @@ Quality assurance of the pipeline
 <a class="sourceLine" id="cb15-9" title="9">    futile.logger<span class="op">::</span><span class="kw">flog.error</span>(<span class="st">&quot;x cannot contain any missing values.&quot;</span>,</a>
 <a class="sourceLine" id="cb15-10" title="10">               x, <span class="dt">capture =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb15-11" title="11">  }</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>## ERROR [2019-03-29 09:09:00] x cannot contain any missing values.
+<pre class="app-tabs__container js-tabs__container"><code>## ERROR [2019-03-29 11:05:23] x cannot contain any missing values.
 ## 
 ## [1] &quot;culture&quot; &quot;sport&quot;   NA</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1">futile.logger<span class="op">::</span><span class="kw">flog.info</span>(<span class="st">&quot;Finished checks.&quot;</span>)</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>## INFO [2019-03-29 09:09:00] Finished checks.</code></pre>
+<pre class="app-tabs__container js-tabs__container"><code>## INFO [2019-03-29 11:05:23] Finished checks.</code></pre>
 <p><span class="govuk-body">The above example can help the user identify where the pipeline is going wrong by logging the error and capturing the object <code>x</code> where the data is missing. This allows us to more quickly track down what’s going wrong.</span></p>
 <h3 class="govuk-heading-m">Logging to file</h3>
 <p><span class="govuk-body">At the moment we default to writing our log to the console. We could write to a file if interested using the <code>appender</code> family of functions.</span></p>
