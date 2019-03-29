@@ -6,7 +6,8 @@
 
 # Exemplar RAP
 
-Chapter \@ref(why) considered why RAP is a useful paradigm.
+The chapter [Why](rap-companion-03-why.html) considered why RAP is a useful
+paradigm.
 
 In this Chapter we demonstrate a RAP package developed in collaboration with the Department for Culture Media and Sport (DCMS). This package enshrines all the pertinent business knowledge in one corpus.
 
