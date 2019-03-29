@@ -1,5 +1,4 @@
 ::: {.breadcrumbs}
-* [Home](index.html)
 * [Companion](companion-index.html)
 * Why RAP?
 :::
