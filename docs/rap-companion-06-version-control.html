@@ -4008,7 +4008,7 @@ You have a new master on Github. Pull it to your local machine and the developme
 <p><span class="govuk-body">As an additional measure, or if you find versioning intimidating, you could watermark your report by citing the git commit used to generate it, as demonstrated below and in the stackoverflow answer by <a href="https://stackoverflow.com/questions/32260956/show-git-version-in-r-code" class="govuk-link">Wander Nauta, 2015</a>.</span></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">print</span>(<span class="kw">system</span>(<span class="st">&quot;git rev-parse --short HEAD&quot;</span>,</a>
 <a class="sourceLine" id="cb5-2" title="2">             <span class="dt">intern =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
-<pre class="app-tabs__container js-tabs__container"><code>## [1] &quot;eef151f&quot;</code></pre>
+<pre class="app-tabs__container js-tabs__container"><code>## [1] &quot;c69785b&quot;</code></pre>
 <p><span class="govuk-body">This commit hash can be used to “revert” back to the code at the time the report was produced, fool around and reproduce the original report. You also have the flexibility to do other things which are explored in this <a href="https://stackoverflow.com/questions/4114095/how-to-revert-git-repository-to-a-previous-commit" class="govuk-link">Stack Overflow answer</a>. This feature of version control is what makes our analytical pipelines reproducible.</span></p>
     </main>
   </div>

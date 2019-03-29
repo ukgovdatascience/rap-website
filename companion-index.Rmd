@@ -1,6 +1,9 @@
----
-title: "RAP Companion"
----
+:::{.breadcrumbs}
+* [home](index.html)
+* RAP Companion
+:::
+
+# RAP Companion
 
 1. [Preface](rap-companion-00-preface.html)
 1. [Introduction](rap-companion-01-introduction.html)
