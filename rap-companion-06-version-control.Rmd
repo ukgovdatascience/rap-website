@@ -98,7 +98,7 @@ Imagine if someone asks you to reproduce some historic analysis further down the
 
 As an additional measure, or if you find versioning intimidating, you could watermark your report by citing the git commit used to generate it, as demonstrated below and in the stackoverflow answer by [Wander Nauta, 2015](https://stackoverflow.com/questions/32260956/show-git-version-in-r-code).
 
-```{r}
+```{r, cache = TRUE}
 print(system("git rev-parse --short HEAD",
              intern = TRUE))
 
