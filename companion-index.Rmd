@@ -1,6 +1,6 @@
 :::{.breadcrumbs}
 * [home](index.html)
-* RAP Companion
+* Companion
 :::
 
 # RAP Companion and Course
