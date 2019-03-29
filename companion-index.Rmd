@@ -3,7 +3,21 @@
 * RAP Companion
 :::
 
-# RAP Companion
+# RAP Companion and Course
+
+The RAP Companion is an online book about RAP.  The [original
+book](https://ukgovdatascience.github.io/rap_companion/) was written by Matt
+Upson and Matt Gregory in 2017 and has been updated since with contributions by
+other people.
+
+[Reproducible Analytical Pipelines (RAP) using
+R](https://www.udemy.com/reproducible-analytical-pipelines) is a free online
+course that draws on the RAP Companion, with examples and exercises in the R
+programming language.
+
+The articles linked below are copies of the original RAP Companion.  Some users
+might find these versions more accessible because this website uses accessible
+components from the GOV.UK Design System.
 
 1. [Preface](rap-companion-00-preface.html)
 1. [Introduction](rap-companion-01-introduction.html)
@@ -20,3 +34,13 @@
 1. [Quality assurance](rap-companion-12-quality-assurance.html)
 1. [Publishing](rap-companion-13-publishing.html)
 1. [Final thoughts](rap-companion-14-final-thoughts.html)
+
+## Future of the RAP Companion
+
+The RAP Companion will not be extensively updated.  New
+[articles](articles.html) can be written and published on this website instead.
+The reason not to update the RAP Companion is because that would require the
+[online course videos](https://www.udemy.com/reproducible-analytical-pipelines)
+to be updated too, which would be difficult to do collaboratively.  Rather than
+allow the Companion to diverge from the course videos, the Companion will be
+preserved, and new and revised material will be published on this website.

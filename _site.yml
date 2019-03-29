@@ -9,10 +9,10 @@ navbar:
       href: index.html
     - text: "Companion"
       href: companion-index.html
-    - text: "Blog"
+    - text: "Articles"
+      href: articles.html
+    - text: "Blog Posts"
       href: blog.html
-    - text: "About"
-      href: about.html
 output:
   govdown::govdown_document:
     font: "sans-serif"

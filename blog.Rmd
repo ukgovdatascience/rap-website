@@ -1,14 +1,13 @@
----
-title: "RAP Blog"
----
+# Blog posts
 
-Some blog posts are on external sites.
+This page links to blog posts published on this website and other websites.
+Contribute to blog posts by discussing them in the [Slack
+channel](https://govdatascience.slack.com/messages/C6H22U3H9/)
+(#rap_collaboration) or by opening an [issue on
+GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 
-<ul class="govuk-list">
-  <li>
-    [Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/)
-  </li>
-  <li>
-    [Transforming the process of producing official statistics](https://dataingovernment.blog.gov.uk/2017/11/27/transforming-the-process-of-producing-official-statistics/)
-  </li>
-</ul>
+:::{.unbulletted-list}
+* [Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/)
+* [Transforming the process of producing official statistics](https://dataingovernment.blog.gov.uk/2017/11/27/transforming-the-process-of-producing-official-statistics/)
+* [A robot by any name?](https://www.statisticsauthority.gov.uk/a-robot-by-any-name/)
+:::

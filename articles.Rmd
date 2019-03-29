@@ -1,0 +1,10 @@
+# Articles
+
+This page links to articles published on this website and other websites.
+Contribute to blog posts by discussing them in the [Slack
+channel](https://govdatascience.slack.com/messages/C6H22U3H9/)
+(#rap_collaboration) or by opening an [issue on
+GitHub](https://github.com/ukgovdatascience/rap-website/issues).
+
+:::{.unbulletted-list}
+:::

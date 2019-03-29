@@ -1,5 +1,40 @@
----
-title: "Work in progress"
----
+# RAP: Reproducible Analytical Pipelines
 
-This website is under construction.
+The Reproducible Analytical Pipeline (RAP) is a methodology for automating the
+bulk of steps involved in creating a statistical report.
+
+RAP is also a community of people who work with data using methods adapted from
+software development.  The RAP community promotes the use of programming
+languages, version control, automated testing, peer review, and other tools and
+methods.
+
+This website is a place for the community to publish materials that it finds
+useful.  In particular, materials that include code can be published on this
+website.
+
+## Other RAP websites
+
+The [RAP Champions
+network](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions)
+is coordinated by the Government Statistical Service, who maintain a list of
+people to contact for help, a list of examples of RAP projects, and links to
+blog posts, guides and courses.
+
+## Contribute to this website
+
+Contribute to this website by discussing it in the [Slack
+channel](https://govdatascience.slack.com/messages/C6H22U3H9/)
+(#rap_collaboration), or by opening an [issue on
+GitHub](https://github.com/ukgovdatascience/rap-website/issues).
+
+The website is built using the R package
+[govdown](https://ukgovdatascience.github.io/govdown/).  It supports code
+written in R, Python. and can support other languages that the knitr package
+supports, as long as someone is able to run the code to build the website.  In
+future this website might be built by [Travis](https://travis-ci.org/).
+
+## Attribution
+
+The warp pipe logo by http://delapouite.com/ was obtained from
+https://game-icons.net/1x1/delapouite/warp-pipe.html licensed CC BY 3.0
+http://creativecommons.org/licenses/by/3.0/ and is used unaltered.
