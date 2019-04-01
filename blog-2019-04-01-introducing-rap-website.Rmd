@@ -1,0 +1,57 @@
+# Introducing the RAP website
+
+By Duncan Garmonsway on 1 April 2019
+
+## The RAP website is for us
+
+The RAP community writes heaps of useful documents.  We blog in various places.
+We write tutorials, style guides, standards, business cases, snippets of code to
+help each other out.  We share them within our own departments and on
+[Slack](https://govdatascience.slack.com/messages/C6H22U3H9/)
+(#rap_collaboration).  Now we can publish on this website too.
+
+## It isn't finished yet
+
+It is barely started.  It has an 'alpha' phase banner, which means "let's try
+this, and if it doesn't work then we can junk it".  It has a feedback link to
+the [GitHub issues](https://github.com/ukgovdatascience/rap-website/issues),
+where we can discuss specifics, or we can chat about it on Slack.
+
+## It's Web 2.0
+
+It isn't really Web 2.0 because it's a static site created with the R package
+[govdown](https://ukgovdatascience.github.io/govdown/) (basically R Markdown).
+But it *is* for all of us to write content.  We've already written plenty of
+content, so let's put it here.
+
+You can contribute content by discussing yours or someone else's in Slack, or by
+opening an [issue on
+GitHub](https://github.com/ukgovdatascience/rap-website/issues).  Look at the
+[RAP Companion issues](https://github.com/ukgovdatascience/rap_companion/issues)
+for ideas.  Python content would be great -- there's almost none yet, mainly
+because the people who wrote the RAP Companion weren't pythonistas at the time.
+
+## It doesn't replace the Champions Network page or any others
+
+The [RAP Champions
+Network](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions)
+is coordinated by the Government Statistical Service, who maintain a list of
+people to contact for help, a list of examples of RAP projects, and links to
+blog posts, guides and courses.  Several blog posts have already been published
+in official blogs on blog.gov.uk.  It is better to publish on those websites if
+you can (and we can link to them from here).  This website hopefully augments
+those by being a place to write technical content with code blocks, and try
+things out that aren't ready to be on the GOV.UK domain.
+
+## Accessibility matters
+
+This website is only as good as its accessibility.  It has been built with
+accessible components from the [GOV.UK Design
+System](https://design-system.service.gov.uk/), and will be tested in an
+[empathy
+lab](https://gds.blog.gov.uk/2018/06/20/creating-the-uk-governments-accessibility-empathy-lab/).  Please tell someone if you notice a problem.
+
+## Have a look around
+
+Follow the links in the black banner at the top of the page and tell us what you
+think.
