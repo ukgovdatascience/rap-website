@@ -1,0 +1,417 @@
+# Amendments to GOV.UK statistics publications
+
+An exploratory data analysis to inform Reproducible Analytical Pipelines, by
+Duncan Garmonsway on 15 January 2019.
+
+## Introduction
+
+The [Reproducible Analytical Pipeline
+(RAP)](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/)
+is an alternative production methodology for automating the bulk of steps
+involved in creating a statistical report.
+
+One motivation to use RAP methods is to avoid making trivial mistakes, by
+removing as much opportunity for human error as possible.  For example, the
+following note describes a trivial amendment that could have been avoided by
+programming a computer to update the date of the quarterly publication.
+
+> The date for the publication ... was incorrectly stated as 14 February 2019,
+> this has now been corrected to 21 February 2019 which is in line with the
+> release calendar and established practice to publish on the third Thursday of
+> the month.
+
+This article investigates.
+
+* How common amendments are
+* Whether they are becoming more or less common
+* Why amendments are made
+The code is on
+[GitHub](https://github.com/ukgovdatascience/govuk-statistics-amendment-watch)
+
+```{r setup, include = FALSE}
+library(tidyverse)
+library(lubridate)
+library(patchwork)
+library(ebbr)
+library(DT)
+library(here)
+
+knitr::opts_chunk$set(cache = TRUE,
+                      echo = FALSE,
+                      fig.width = 9.5)
+
+reports <- readRDS(here("reports.Rds"))
+
+theme_set(theme_bw())
+```
+
+```{r change-history}
+# Extract the change history of each report
+
+empty_changes <- tibble(public_timestamp = character(),
+                        note = character())
+
+chuck_changes <-
+  function(.x) {
+    out <- purrr::chuck(.x, "details", "change_history") # purrr::chuck() not on CRAN
+    if (is.null(out)) {
+      stop("null!") # change_history can be present yet NULL
+    }
+    out
+  }
+possibly_pluck_changes <- possibly(chuck_changes, otherwise = empty_changes)
+
+chuck_organisation <-
+  function(.x) {
+    out <- purrr::chuck(.x, # purrr::chuck() not on CRAN
+                        "links",
+                        "primary_publishing_organisation",
+                        "title")
+    if (is.null(out)) {
+      stop("null!") # element can be present yet NULL
+    }
+    out
+  }
+possibly_pluck_organisation <-
+  possibly(chuck_organisation, otherwise = NA_character_)
+
+changes <-
+  reports %>%
+  mutate(organisation = map_chr(reports, possibly_pluck_organisation),
+         organisation = str_trim(organisation),
+         changes = map(reports, possibly_pluck_changes)) %>%
+  select(-reports) %>%
+  unnest() %>%
+  mutate(public_timestamp = parse_datetime(public_timestamp),
+         month = floor_date(public_timestamp, "month"),
+         year = floor_date(public_timestamp, "year"),
+         is_first_publication = note == "First published.")
+
+no_changes <- anti_join(reports, changes, by = "base_path")
+```
+
+## Detection of amendments
+
+Updates are regarded as 'amendments' when they contain a word from a list.  The
+list of words was compiled in discussion with colleagues and by referring to a
+[thesaurus](https://www.thesaurus.com/browse/mistake).  Some words were
+discarded because there were many false positives.
+
+```{r error-vocab}
+error_vocab <-
+  c(
+    "aberration",
+    "amend",                           # keep but omit "Updated to reflect amendments made to existing licences since previous publication"
+    "blunder",
+    "correct",                         # keep
+    "deviation",
+    "erratum",                         # keep
+    "error",                           # keep
+    "falsehood",
+    "fix",                             # keep
+    "flaw",
+    "glitch",
+    "inaccuracy",                      # keep
+    "inadvertent",                     # keep
+    "lapse",
+    "misapplication",
+    "misapprehension",
+    "miscalculation",
+    "misconception",
+    "misinterpretation",               # keep
+    "misjudgment",
+    "misprint",
+    "misstatement",
+    "misstep",
+    "mistake",                         # keep
+    "misunderstanding",
+    "omission",                        # keep
+    "overestimation",
+    "oversight",
+    "rectify",                         # keep
+    "remedy",
+    "wrong"                            # keep
+    # "alter",                           # discard: conflicts with 'alternative'
+    # "change",                          # discard: inconsistent, often not necessary
+    # "confusion",                       # discard
+    # "failure",                         # discard: crops up in fire statistics
+    # "fault",                           # discard
+    # "repair",                          # discard: inconsistent
+    # "revise",                          # discard: often improvements not corrections
+  )
+error_regex <- paste0("(", paste0(error_vocab, collapse = ")|("), ")")
+error_patterns <- map(error_vocab, fixed, ignore_case = TRUE)
+
+count_term <-
+  function(strings, pattern) {
+    sum(stringr::str_detect(strings, pattern))
+  }
+count_matches <-
+  function(.data, col, ...) {
+    strings <- dplyr::pull(.data, !! rlang::enquo(col))
+    patterns <- rlang::flatten(rlang::list2(...))
+    counts <- purrr::map_int(patterns,
+                             count_term,
+                             strings = strings)
+    tibble(pattern = purrr::flatten_chr(patterns),
+           n = counts)
+  }
+```
+
+### The number of notes that matched each word in the vocabulary
+
+```{r count-matches}
+count_matches(changes, note, error_patterns) %>%
+  arrange(desc(n), pattern) %>%
+  print(n = Inf)
+```
+
+### Searchable table of all notes
+
+```{r notes-datatable, warning = FALSE}
+changes %>%
+  dplyr::filter(!str_detect(note,
+                            "Updated to reflect amendments made to existing licences since previous publication")) %>%
+  select(note) %>%
+  datatable()
+```
+
+```{r mark-amendments}
+changes <-
+  changes %>%
+  mutate(is_amendment = str_detect(note,
+                                   regex(error_regex,
+                                         ignore_case = TRUE)),
+         is_amendment = is_amendment & !str_detect(note, "Updated to reflect amendments made to existing licences since previous publication"))
+```
+
+## How common are changes (not just amendments)?
+
+Many first publications were backdated.  The date of the first change is a
+reasonable estimate for the date that GOV.UK first published statistics
+
+```{r first-change-date}
+first_change_date <-
+  changes %>%
+  dplyr::filter(!is_first_publication) %>%
+  pull(public_timestamp) %>%
+  min()
+```
+
+### Changes per month
+
+```{r changes-per-month}
+changes %>%
+  dplyr::filter(public_timestamp >= first_change_date,
+                month < max(month)) %>% # drop the latest (incomplete) month
+  count(month, is_first_publication) %>%
+  ggplot(aes(month, n, colour = is_first_publication)) +
+  geom_line() +
+  scale_colour_discrete(name = "First publication") +
+  xlab("") +
+  ylab("Number of new publications or changes") +
+  ggtitle("Number of new publications and changes per month")
+```
+
+### Changes per year
+
+```{r changes-per-year}
+changes %>%
+  dplyr::filter(public_timestamp >= first_change_date,
+                year < max(year)) %>% # drop the latest (incomplete) year
+  count(year, is_first_publication) %>%
+  ggplot(aes(year, n, colour = is_first_publication)) +
+  geom_line() +
+  scale_colour_discrete(name = "First publication") +
+  xlab("") +
+  ylab("Number of new publications or changes") +
+  ggtitle("Number of new publications and changes per year")
+```
+
+## How common are amendments?
+
+The most that can be said is that "amendments happen".  The number of amendments
+detected is in fact quite low (about 2% of all changes), and that could be
+because:
+
+* There aren't many amendments to be detected
+* Some amendments are silently fixed in a subsequent update
+* The method of detecting amendments isn't sensitive enough
+
+On the other hand, RAP won't necessarily reduce the number of amendments -- in
+fact it might increase it by having greater power to detect mistakes through
+peer review.  Errors are likely to be noticed when RAP is first applied.
+
+```{r amendments}
+amendments <- dplyr::filter(changes, is_amendment)
+```
+
+### Amendments per month
+
+```{r amendments-per-month}
+amendments %>%
+  dplyr::filter(public_timestamp >= first_change_date,
+                month < max(month)) %>% # drop the latest (incomplete) month
+  count(month) %>%
+  ggplot(aes(month, n)) +
+  geom_line() +
+  xlab("") +
+  ylab("Number of amendments") +
+  ggtitle("Number of amendments per month")
+```
+
+### Amendments per year
+
+```{r amendments-per-year}
+amendments %>%
+  dplyr::filter(public_timestamp >= first_change_date,
+                year < max(year)) %>% # drop the latest (incomplete) year
+  count(year) %>%
+  ggplot(aes(year, n)) +
+  geom_line() +
+  xlab("") +
+  ylab("Number of amendments") +
+  ggtitle("Number of amendments per year")
+```
+
+### Amendments as percentage of all changes per month
+
+```{r amendments-percent-per-month}
+changes %>%
+  dplyr::filter(public_timestamp >= first_change_date,
+                month < max(month)) %>% # drop the latest (incomplete) month
+  count(month, is_amendment) %>%
+  spread(is_amendment, n, fill = 0L) %>%
+  mutate(amendment_prop = `TRUE` / (`TRUE` + `FALSE`)) %>%
+  ggplot(aes(month, amendment_prop)) +
+  geom_line() +
+  scale_y_continuous(labels = scales::percent) +
+  xlab("") +
+  ylab("") +
+  ggtitle("Amendments as a percentage of all changes (monthly)")
+```
+
+#' ### Amendments as percentage of all changes per year
+
+```{r amendments-percent-per-year}
+changes %>%
+  dplyr::filter(public_timestamp >= first_change_date,
+                year < max(year)) %>% # drop the latest (incomplete) year
+  count(year, is_amendment) %>%
+  spread(is_amendment, n, fill = 0L) %>%
+  mutate(amendment_prop = `TRUE` / (`TRUE` + `FALSE`)) %>%
+  ggplot(aes(year, amendment_prop)) +
+  geom_line() +
+  scale_y_continuous(labels = scales::percent) +
+  xlab("") +
+  ylab("") +
+  ggtitle("Amendments as a percentage of all changes (annual)")
+```
+
+### Distribution of rates per organisation in the last complete year
+
+The graph shows for each organisation:
+
+* (Left) The total number of changes, including amendments
+* (Right, ticks) The percentage of changes that were amendments
+* (Right, lines) The 95% credible interval of the Empirical Bayes estimate of
+  the rate.  Longer lines show greater uncertainty about the true rate when an
+  organisation has few publications.
+
+Most organisations have made no amendments.  Some of those haven't published
+much, but a few have published a lot.  Few organisations have a credible
+interval entirely above a 5% amendment rate.
+
+The Empirical Bayes model was fitted with a beta-binomial prior fitted to the
+data by maximum likelihood estimation; see
+[`?ebbr::ebb_fit_prior`](https://github.com/dgrtwo/ebbr/blob/master/R/ebb_fit_prior.R)
+for details.
+
+```{r bayes-rate-estimate, fig.height = 10, fig.width = 10}
+bayes_rates <-
+  changes %>%
+  dplyr::filter(public_timestamp >= first_change_date,
+                year == max(year) - years(1L)) %>% # drop the latest (incomplete) year
+  count(year, organisation, is_amendment) %>%
+  spread(is_amendment, n, fill = 0L) %>%
+  mutate(total = `TRUE` + `FALSE`,
+         amendments = `TRUE`) %>%
+  select(-`TRUE`, -`FALSE`) %>%
+  add_ebb_estimate(amendments, total) %>%
+  dplyr::filter(!is.na(organisation)) %>%
+  # mutate(organisation = fct_reorder2(organisation, .high, .low))
+  # mutate(organisation = fct_reorder2(organisation, .low, total))
+  mutate(organisation = fct_reorder(organisation, (total)))
+
+p_count <-
+  bayes_rates %>%
+  ggplot(aes(organisation)) +
+  geom_segment(aes(xend = organisation, y = 0, yend = total)) +
+  scale_y_reverse(position = "right") +
+  ggtitle("Number of changes published per organisation") +
+  coord_flip() +
+  xlab("") +
+  ylab("") +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+p_prop <-
+  bayes_rates %>%
+  ggplot(aes(organisation)) +
+  geom_point(aes(y = amendments / total), colour = "black", shape = 3) +
+  geom_segment(aes(xend = organisation, y = .low, yend = .high)) +
+  scale_y_continuous(labels = scales::percent,
+                     limits = c(0, NA),
+                     position = "right") +
+  ggtitle("Actual and estimated amendment rate per organisation",
+          subtitle = "Ticks: true percentage of amendments\nLines: 95% credible interval of the percentage of amendments") +
+  coord_flip() +
+  xlab("") +
+  ylab("") +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+p_count + p_prop + plot_layout(nrow = 1)
+```
+
+## Why are amendments made?
+
+```{r table-of-amendments, layout = "l-page"}
+changes %>%
+  dplyr::filter(is_amendment) %>%
+  arrange(desc(public_timestamp)) %>%
+  mutate(date = strftime(public_timestamp, "%Y-%m-%d"),
+         publication = paste0("https://www.gov.uk", base_path)) %>%
+  select(publication,
+         organisation,
+         date,
+         note) %>%
+  datatable()
+```
+
+## What other changes are made?
+
+```{r table-of-non-amendments, layout = "l-page", warning = FALSE}
+changes %>%
+  dplyr::filter(!is_amendment) %>%
+  arrange(desc(public_timestamp)) %>%
+  mutate(date = strftime(public_timestamp, "%Y-%m-%d"),
+         publication = paste0("https://www.gov.uk", base_path)) %>%
+  select(publication,
+         organisation,
+         date,
+         note) %>%
+  datatable()
+```
+
+## Session info
+
+```{r}
+options(width = 90)
+devtools::session_info()
+```
+
