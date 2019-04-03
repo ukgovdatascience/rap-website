@@ -1,11 +1,18 @@
 # Articles
 
-This page links to articles published on this website and other websites.
-Contribute to blog posts by discussing them in the [Slack
+This page links to articles and blog posts published on this website and other
+websites.  Contribute to blog posts by discussing them in the [Slack
 channel](https://govdatascience.slack.com/messages/C6H22U3H9/)
 (#rap_collaboration) or by opening an [issue on
 GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 
 :::{.unbulletted-list}
+* [Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/)
+* [Transforming the process of producing official statistics](https://dataingovernment.blog.gov.uk/2017/11/27/transforming-the-process-of-producing-official-statistics/)
+* [A robot by any name?](https://www.statisticsauthority.gov.uk/a-robot-by-any-name/)
+* [GangStaS Data RAP](https://gss.civilservice.gov.uk/blog/gangstas-data-rap/)
+* [RAP champions meet for the first time](https://gss.civilservice.gov.uk/news/rap-champions-meet-for-the-first-time/)
 * [Amendment rate of GOV.UK statistics publications](./article-2019-01-15-govuk-amendments.html)
+* [Introducing the RAP website](./blog-2019-04-01-introducing-rap-website.html)
 :::
+

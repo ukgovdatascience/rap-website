@@ -11,8 +11,8 @@ navbar:
       href: companion-index.html
     - text: "Articles"
       href: articles.html
-    - text: "Blog Posts"
-      href: blog.html
+    - text: "Resources"
+      href: resources.html
 output:
   govdown::govdown_document:
     font: "sans-serif"
