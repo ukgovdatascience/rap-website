@@ -3799,13 +3799,12 @@ color: #d14;
                   <!-- link name -->
                   Articles
                 </a>
-              </li>            <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+              </li>            <li class="govuk-header__navigation-item">
                 <a class="govuk-header__link" href="resources.html">
                   <!-- link name -->
                   Resources
                 </a>
               </li>
-  
             </ul>
           </nav>
   
@@ -3841,11 +3840,65 @@ color: #d14;
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper " id="main-content" role="main">
-            <h1 class="govuk-heading-xl">Resources</h1>
-<p><span class="govuk-body">This page links to tools, case studies, templates, and other documents to help make Reproducible Analytical Pipelinese. Contribute to resources by discussing them in the <a href="https://govdatascience.slack.com/messages/C6H22U3H9/" class="govuk-link">Slack channel</a> (#rap_collaboration) or by opening an <a href="https://github.com/ukgovdatascience/rap-website/issues" class="govuk-link">issue on GitHub</a>.</span></p>
-<div>
-<p><span class="govuk-body"><a href="resource-nhs-nss-transforming-publications-toolkit.html" class="govuk-link">NHS NSS Transforming Publications Toolkit</a></span></p>
-</div>
+            <h1 class="govuk-heading-xl">Toolkit</h1>
+<p><span class="govuk-body">The NHS NSS Transforming Publishing team have created a toolkit of templates, guides and resources to support the modernisation of both the back end production of statistical products (<a href="#reproducible-analytical-pipelines" class="govuk-link">Reproducible Analytical Pipelines</a>) and the user-facing output of statistical products to a digital platform (<a href="#transformed-publications" class="govuk-link">Transformed Publications</a>). These tools will also be helpful when moving from a proprietary software such as SPSS or SAS, to an open source software such as R for any statistical analyses. If you have any questions about this toolkit then please contact the team at <a href="mailto:nss.isdtransformingpublishing@nhs.net" class="email govuk-link">nss.isdtransformingpublishing@nhs.net</a> and they would be delighted to help.</span></p>
+<p><span class="govuk-body">The original version of this toolkit is on <a href="https://github.com/NHS-NSS-transforming-publications/Toolkit/blob/master/README.md" class="govuk-link">GitHub</a>.</span></p>
+<h2 class="govuk-heading-l">Reproducible Analytical Pipelines</h2>
+<p><span class="govuk-body">Reproducible Analytical Pipelines are a way to introduce a robust, efficient and reproducible work flow when carrying out data analysis. They have traditionally been applied to statistical publications, but the principles are relevant to any analysis.</span></p>
+<h3 class="govuk-heading-m">Guidance and templates</h3>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+<a href="https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf" class="govuk-link"><strong>This paper</strong></a> explains what Reproducible Analytical Pipelines are, how to assess whether your work is suitable to ‘RAP’ and details several levels of code maturity and RAP which can be selected depending on a number of factors, such as the skill in your team or the available IT infrastructure.
+</li>
+<li class="govuk-body">
+The <a href="https://github.com/Health-SocialCare-Scotland/R-Resources/blob/master/PHI%20R%20style%20guide.md" class="govuk-link"><strong>PHI R Style Guide</strong></a> should be followed by analysts when writing any R code to improve consistency across the organisation and ensure that our R code is readable, shareable and reusable.
+</li>
+<li class="govuk-body">
+Use the recommended <a href="https://github.com/Health-SocialCare-Scotland/r-project-structure" class="govuk-link"><strong>PHI R project structure</strong></a> when writing R code to ensure you have a sensible workflow and structure. <strong>It’s now even easier to use this template:</strong> an R project which follows the recommended structure can be created from within RStudio using the new <a href="https://github.com/Health-SocialCare-Scotland/phiproject" class="govuk-link"><strong>phiproject package</strong></a>.
+</li>
+<li class="govuk-body">
+Use these <a href="https://github.com/NHS-NSS-transforming-publications/RMarkdown" class="govuk-link"><strong>National Statistic publication templates</strong></a> to automate your PDF reports using Rmarkdown.
+</li>
+<li class="govuk-body">
+<em>Coming soon</em>: Tips on automating excel tables
+</li>
+</ul>
+<h3 class="govuk-heading-m">Further resources</h3>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+<a href="https://scotland.shinyapps.io/nhs-r-resources/" class="govuk-link"><strong>This app</strong></a> contains a range of resources for R, such as links to online training and cheatsheets, and information about internal R user groups.
+</li>
+<li class="govuk-body">
+The Transforming Publishing team also have a <a href="https://github.com/NHS-NSS-transforming-publications/resources" class="govuk-link"><strong>resources area</strong></a>, with useful resources on technical issues such as version control.
+</li>
+<li class="govuk-body">
+If using git for version control, you should follow our team’s <a href="https://github.com/NHS-NSS-transforming-publications/GitHub-guidance" class="govuk-link"><strong>GitHub guidance</strong></a> on workflow and security.
+</li>
+</ul>
+<h2 class="govuk-heading-l">Transformed Publications</h2>
+<p><span class="govuk-body">ISD has developed a new web-based way of releasing statistical publications to our users and has now released two publications in this format: <a href="https://www.isdscotland.org/Health-Topics/Hospital-Care/Publications/2018-12-18/acute-hospital-publication/?49401491881" class="govuk-link">Acute Hospital Activity and Beds</a> and <a href="https://www.isdscotland.org/Health-Topics/Mental-Health/Publications/2018-09-25/psychiatric-inpatient-activity/" class="govuk-link">Psychiatric Inpatient Activity</a>. This new design has been developed with users at the heart of the process, and incorporates elements of static text, D3 charts, RShiny dashboards and open data.</span></p>
+<h3 class="govuk-heading-m">User engagement</h3>
+<p><span class="govuk-body">It is vital that users are part of the development, or re-development, of a statistical publication so that we can ensure that the final product meets their needs and is usable. This means involving users before, during and after development.</span></p>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+<em>Coming soon</em>: User engagement guidance paper
+</li>
+<li class="govuk-body">
+<em>Coming soon</em>: Usability testing guidance paper
+</li>
+</ul>
+<h3 class="govuk-heading-m">Transforming output</h3>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+Use this <a href="https://github.com/Health-SocialCare-Scotland/rshiny-project-structure" class="govuk-link"><strong>blank RShiny template</strong></a> when starting to build a new app or dashboard to ensure you have a sensible workflow and structure.
+</li>
+<li class="govuk-body">
+Follow these examples of our existing RShiny dashboards for good practice in terms of both coding and design: <a href="https://github.com/Health-SocialCare-Scotland/Psychiatric-Inpatient-Activity" class="govuk-link"><strong>Psychiatric Inpatient Activity Data Explorer code</strong></a> and <a href="https://github.com/Health-SocialCare-Scotland/Hospital-Acute-Activity" class="govuk-link"><strong>Acute Activity Data Explorer code</strong></a>.
+</li>
+<li class="govuk-body">
+<em>Coming soon</em>: Chart and dashboard guidance paper
+</li>
+</ul>
     </main>
   </div>
 
