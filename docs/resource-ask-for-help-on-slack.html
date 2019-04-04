@@ -10,6 +10,92 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
   <!--[if !IE 8]><!-->
   <style type="text/css">@charset "UTF-8";
@@ -3786,10 +3872,9 @@ color: #d14;
                 <a class="govuk-header__link" href="companion-index.html">Companion</a>
               </li>            <li class="govuk-header__navigation-item">
                 <a class="govuk-header__link" href="articles.html">Articles</a>
-              </li>            <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+              </li>            <li class="govuk-header__navigation-item">
                 <a class="govuk-header__link" href="resources.html">Resources</a>
               </li>
-  
             </ul>
           </nav>
   
@@ -3822,11 +3907,56 @@ color: #d14;
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper " id="main-content" role="main">
-            <h1 class="govuk-heading-xl">Resources</h1>
-<p><span class="govuk-body">This page links to tools, case studies, templates, and other documents to help make Reproducible Analytical Pipelinese. Contribute to resources by discussing them in the <a href="https://govdatascience.slack.com/messages/C6H22U3H9/" class="govuk-link">Slack channel</a> (#rap_collaboration) or by opening an <a href="https://github.com/ukgovdatascience/rap-website/issues" class="govuk-link">issue on GitHub</a>.</span></p>
-<div>
-<p><span class="govuk-body"><a href="resource-nhs-nss-transforming-publications-toolkit.html" class="govuk-link">NHS NSS Transforming Publications Toolkit</a> <a href="resource-nhs-nss-transforming-publications-toolkit.html" class="govuk-link">How to ask for help on Slack</a></span></p>
+            <h1 class="govuk-heading-xl">Ask for help on Slack</h1>
+<p><span class="govuk-body">The <a href="govdatascience.slack.com" class="govuk-link">govdatascience Slack</a> is a friendly place to ask for help from other people in the civil service. Here are some ways you can use it, and make it easier for people to help you.</span></p>
+<p><span class="govuk-body">The channels #r and #python are good channels to ask questions specific to those languages. There are other good channels for different topics, like machine learning and APIs. The #rap_collaboration channel is good for topics that aren’t specific to a language or technique, but are about working according the the RAP methodology.</span></p>
+<h2 class="govuk-heading-l">What I’ve got, what I want</h2>
+<p><span class="govuk-body">This type of question is for when you are writing code to do something very specific. Try to write a very simple example example of the output you want, and the input you have. Here is a real-life example.</span></p>
+<div class="govuk-inset-text">
+<p><span class="govuk-body">I can’t tell if this is difficult or I just haven’t woken up yet. I want to filter <code>dummy</code> to give me just the rows that have both sources for each <code>code</code>. Hope that makes sense!</span></p>
 </div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#what Ive got</span></a>
+<a class="sourceLine" id="cb1-2" title="2">dummy &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="dt">code =</span> <span class="kw">c</span>(<span class="st">&quot;02&quot;</span>, <span class="st">&quot;02&quot;</span>, <span class="st">&quot;05&quot;</span>, <span class="st">&quot;07&quot;</span>, <span class="st">&quot;07&quot;</span>, <span class="st">&quot;20&quot;</span>)</a>
+<a class="sourceLine" id="cb1-4" title="4">  , <span class="dt">source =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>), <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb1-5" title="5">  , <span class="dt">value =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb1-6" title="6">)</a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="co">#want I want</span></a>
+<a class="sourceLine" id="cb1-9" title="9">wiw &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb1-10" title="10">  <span class="dt">code =</span> <span class="kw">c</span>(<span class="st">&quot;02&quot;</span>, <span class="st">&quot;02&quot;</span>, <span class="st">&quot;07&quot;</span>, <span class="st">&quot;07&quot;</span>)</a>
+<a class="sourceLine" id="cb1-11" title="11">  , <span class="dt">source =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>), <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb1-12" title="12">  , <span class="dt">value =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb1-13" title="13">)</a></code></pre></div>
+<p><span class="govuk-body">Why ask a question this way?</span></p>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+It doesn’t have to use your actual data, so you don’t have to worry about exposing sensitive data.
+</li>
+<li class="govuk-body">
+It is easy for the person helping you to set up your situation, and know when they have solved it. They don’t have to invent an example themselves.
+</li>
+<li class="govuk-body">
+The process of writing down the problem will often help you to solve it yourself.
+</li>
+</ul>
+<h2 class="govuk-heading-l">Has anyone used X package or Y technique?</h2>
+<p><span class="govuk-body">This question to ask in the the #rap_collaboration or #general channels, as well as the language-specific #r or #python channels if they are relevant. Ask this kind of question when you</span></p>
+<ul class="govuk=list govuk-list--bullet">
+<li class="govuk-body">
+want to know if an idea is feasible
+</li>
+<li class="govuk-body">
+aren’t sure that your knowledge is up to date
+</li>
+<li class="govuk-body">
+would like to start by modifying someone else’s existing code
+</li>
+</ul>
+<p><span class="govuk-body">If you find the answers useful, contribute them to this website by taking some notes and writing an article, or by discussing it in the #rap_collaboration channel.</span></p>
+<h2 class="govuk-heading-l">Ask a question somewhere else</h2>
+<p><span class="govuk-body">RStudio gives <a href="https://www.tidyverse.org/help/" class="govuk-link">advice</a> on asking for help in various places, including Stack Overflow, community.rstudio.com and Twitter, and provides the <a href="https://reprex.tidyverse.org/" class="govuk-link">reprex</a> to help you write reproducible examples.</span></p>
+<p><span class="govuk-body">For Python users, the same principles are still sound, and the package <a href="https://pypi.org/project/reprexpy/" class="govuk-link">reprexpy</a> package is helps you to write reproducible examples.</span></p>
     </main>
   </div>
 
