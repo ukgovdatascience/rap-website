@@ -1,0 +1,69 @@
+# Ask for help on Slack
+
+The [govdatascience Slack](govdatascience.slack.com) is a friendly place to ask
+for help from other people in the civil service.  Here are some ways you can
+use it, and make it easier for people to help you.
+
+The channels #r and #python are good channels to ask questions specific to those
+languages.  There are other good channels for different topics, like machine
+learning and APIs.  The #rap_collaboration channel is good for topics that
+aren't specific to a language or technique, but are about working according the
+the RAP methodology.
+
+## What I've got, what I want
+
+This type of question is for when you are writing code to do something very
+specific. Try to write a very simple example example of the output you want, and
+the input you have.  Here is a real-life example.
+
+> I can’t tell if this is difficult or I just haven’t woken up yet. I want to
+> filter `dummy` to give me just the rows that have both sources for each
+> `code`.  Hope that makes sense!
+
+```{r}
+#what Ive got
+dummy <- tibble::tibble(
+  code = c("02", "02", "05", "07", "07", "20")
+  , source = c(rep(c("a", "b"), 3))
+  , value = c(4,2,5,3,4,5)
+)
+
+#want I want
+wiw <- tibble::tibble(
+  code = c("02", "02", "07", "07")
+  , source = c(rep(c("a", "b"), 2))
+  , value = c(4,2,4,3)
+)
+```
+
+Why ask a question this way?
+
+* It doesn't have to use your actual data, so you don't have to worry
+about exposing sensitive data.
+* It is easy for the person helping you to set up your situation, and know when
+  they have solved it.  They don't have to invent an example themselves.
+* The process of writing down the problem will often help you to solve it
+  yourself.
+
+## Has anyone used X package or Y technique?
+
+This question to ask in the the #rap_collaboration or #general channels, as well
+as the language-specific #r or #python channels if they are relevant.  Ask this
+kind of question when you
+
+* want to know if an idea is feasible
+* aren't sure that your knowledge is up to date
+* would like to start by modifying someone else's existing code
+
+If you find the answers useful, contribute them to this website by taking some
+notes and writing an article, or by discussing it in the #rap_collaboration
+channel.
+
+## Ask a question somewhere else
+
+RStudio gives [advice](https://www.tidyverse.org/help/) on asking for help in
+various places, including Stack Overflow, community.rstudio.com and Twitter, and
+provides the [reprex](https://reprex.tidyverse.org/) to help you write
+reproducible examples.
+
+For Python users, the same principles are still sound, and the package [reprexpy](https://pypi.org/project/reprexpy/) package is helps you to write reproducible examples.

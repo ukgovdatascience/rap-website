@@ -10,6 +10,8 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 ::: {.unbulleted-list}
 [NHS NSS Transforming Publications
 Toolkit](resource-nhs-nss-transforming-publications-toolkit.html)
+[How to ask for help on
+Slack](resource-nhs-nss-transforming-publications-toolkit.html)
 :::
 
 
