@@ -14,26 +14,22 @@ the RAP methodology.
 
 This type of question is for when you are writing code to do something very
 specific. Try to write a very simple example example of the output you want, and
-the input you have.  Here is a real-life example.
+the input you have.
 
-> I can’t tell if this is difficult or I just haven’t woken up yet. I want to
-> filter `dummy` to give me just the rows that have both sources for each
-> `code`.  Hope that makes sense!
+> I'm trying to transform my data from 'long' to 'wide' format, but I'm getting
+> stuck. Here's an example of with some fake data.  Grateful for any
+> suggestions!
 
 ```{r}
-#what Ive got
-dummy <- tibble::tibble(
-  code = c("02", "02", "05", "07", "07", "20")
-  , source = c(rep(c("a", "b"), 3))
-  , value = c(4,2,5,3,4,5)
-)
+# What I've got
+dummy <- tibble::tibble(run = c("a", "a", "b", "b"),
+                        event = c("x", "y", "x", "y"),
+                        score = 1:4)
 
-#want I want
-wiw <- tibble::tibble(
-  code = c("02", "02", "07", "07")
-  , source = c(rep(c("a", "b"), 2))
-  , value = c(4,2,4,3)
-)
+# What I want
+wiw <- tibble::tibble(run = c("a", "b"),
+                      x = c(1L, 3L),
+                      y = c(2L, 4L))
 ```
 
 Why ask a question this way?

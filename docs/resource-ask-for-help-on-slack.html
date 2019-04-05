@@ -3911,23 +3911,19 @@ color: #d14;
 <p><span class="govuk-body">The <a href="govdatascience.slack.com" class="govuk-link">govdatascience Slack</a> is a friendly place to ask for help from other people in the civil service. Here are some ways you can use it, and make it easier for people to help you.</span></p>
 <p><span class="govuk-body">The channels #r and #python are good channels to ask questions specific to those languages. There are other good channels for different topics, like machine learning and APIs. The #rap_collaboration channel is good for topics that aren’t specific to a language or technique, but are about working according the the RAP methodology.</span></p>
 <h2 class="govuk-heading-l">What I’ve got, what I want</h2>
-<p><span class="govuk-body">This type of question is for when you are writing code to do something very specific. Try to write a very simple example example of the output you want, and the input you have. Here is a real-life example.</span></p>
+<p><span class="govuk-body">This type of question is for when you are writing code to do something very specific. Try to write a very simple example example of the output you want, and the input you have.</span></p>
 <div class="govuk-inset-text">
-<p><span class="govuk-body">I can’t tell if this is difficult or I just haven’t woken up yet. I want to filter <code>dummy</code> to give me just the rows that have both sources for each <code>code</code>. Hope that makes sense!</span></p>
+<p><span class="govuk-body">I’m trying to transform my data from ‘long’ to ‘wide’ format, but I’m getting stuck. Here’s an example of with some fake data. Grateful for any suggestions!</span></p>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#what Ive got</span></a>
-<a class="sourceLine" id="cb1-2" title="2">dummy &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="dt">code =</span> <span class="kw">c</span>(<span class="st">&quot;02&quot;</span>, <span class="st">&quot;02&quot;</span>, <span class="st">&quot;05&quot;</span>, <span class="st">&quot;07&quot;</span>, <span class="st">&quot;07&quot;</span>, <span class="st">&quot;20&quot;</span>)</a>
-<a class="sourceLine" id="cb1-4" title="4">  , <span class="dt">source =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>), <span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb1-5" title="5">  , <span class="dt">value =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb1-6" title="6">)</a>
-<a class="sourceLine" id="cb1-7" title="7"></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">#want I want</span></a>
-<a class="sourceLine" id="cb1-9" title="9">wiw &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb1-10" title="10">  <span class="dt">code =</span> <span class="kw">c</span>(<span class="st">&quot;02&quot;</span>, <span class="st">&quot;02&quot;</span>, <span class="st">&quot;07&quot;</span>, <span class="st">&quot;07&quot;</span>)</a>
-<a class="sourceLine" id="cb1-11" title="11">  , <span class="dt">source =</span> <span class="kw">c</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>), <span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb1-12" title="12">  , <span class="dt">value =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb1-13" title="13">)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># What I&#39;ve got</span></a>
+<a class="sourceLine" id="cb1-2" title="2">dummy &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(<span class="dt">run =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;b&quot;</span>),</a>
+<a class="sourceLine" id="cb1-3" title="3">                        <span class="dt">event =</span> <span class="kw">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>),</a>
+<a class="sourceLine" id="cb1-4" title="4">                        <span class="dt">score =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co"># What I want</span></a>
+<a class="sourceLine" id="cb1-7" title="7">wiw &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw">tibble</span>(<span class="dt">run =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>),</a>
+<a class="sourceLine" id="cb1-8" title="8">                      <span class="dt">x =</span> <span class="kw">c</span>(1L, 3L),</a>
+<a class="sourceLine" id="cb1-9" title="9">                      <span class="dt">y =</span> <span class="kw">c</span>(2L, 4L))</a></code></pre></div>
 <p><span class="govuk-body">Why ask a question this way?</span></p>
 <ul class="govuk=list govuk-list--bullet">
 <li class="govuk-body">
