@@ -1,6 +1,6 @@
-# Toolkit
+# NHS NSS Transforming Publications Toolkit
 
-The NHS NSS Transforming Publishing team have created a toolkit of templates,
+The NHS NSS Transforming Publishing team has created a toolkit of templates,
 guides and resources to support the modernisation of both the back end
 production of statistical products ([Reproducible Analytical
 Pipelines](#reproducible-analytical-pipelines)) and the user-facing output of
@@ -13,6 +13,8 @@ nss.isdtransformingpublishing@nhs.net and they would be delighted to help.
 
 The original version of this toolkit is on
 [GitHub](https://github.com/NHS-NSS-transforming-publications/Toolkit/blob/master/README.md).
+Sections of it that are relevant to all RAP projects are republished and
+slightly adapted here.
 
 ## Reproducible Analytical Pipelines
 
@@ -23,44 +25,41 @@ analysis.
 
 ### Guidance and templates
 
-- [**This
-  paper**](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf)
+- [This
+  paper](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf)
   explains what Reproducible Analytical Pipelines are, how to assess whether
   your work is suitable to ‘RAP’ and details several levels of code maturity and
   RAP which can be selected depending on a number of factors, such as the skill
   in your team or the available IT infrastructure.
-- The [**PHI R Style
-  Guide**](https://github.com/Health-SocialCare-Scotland/R-Resources/blob/master/PHI%20R%20style%20guide.md)
-  should be followed by analysts when writing any R code to improve consistency
-  across the organisation and ensure that our R code is readable, shareable and
-  reusable.
-- Use the recommended [**PHI R project
-  structure**](https://github.com/Health-SocialCare-Scotland/r-project-structure)
-  when writing R code to ensure you have a sensible workflow and structure.
-  **It's now even easier to use this template:** an R project which follows the
+- The [PHI R Style
+  Guide](https://github.com/Health-SocialCare-Scotland/R-Resources/blob/master/PHI%20R%20style%20guide.md)
+  is for analysts to follow when writing any R code, to make it consistent,
+  readable, shareable and reusable.  You might like to adopt or adapt it in your
+  own department.
+- PHI uses a recommended [R project
+  structure](https://github.com/Health-SocialCare-Scotland/r-project-structure)
+  when writing R code to ensure a sensible workflow and structure.
+  An R project which follows the
   recommended structure can be created from within RStudio using the new
-  [**phiproject
-  package**](https://github.com/Health-SocialCare-Scotland/phiproject).
-- Use these [**National Statistic publication
-  templates**](https://github.com/NHS-NSS-transforming-publications/RMarkdown)
-  to automate your PDF reports using Rmarkdown.
-- *Coming soon*: Tips on automating excel tables
+  [phiproject
+  package](https://github.com/Health-SocialCare-Scotland/phiproject).
+- Templates like the [National Statistic publication
+  templates](https://github.com/NHS-NSS-transforming-publications/RMarkdown)
+  can be used to automate PDF reports using Rmarkdown.
 
 ### Further resources
 
-- [**This app**](https://scotland.shinyapps.io/nhs-r-resources/) contains a
-  range of resources for R, such as links to online training and cheatsheets,
-  and information about internal R user groups.
-- The Transforming Publishing team also have a [**resources
-  area**](https://github.com/NHS-NSS-transforming-publications/resources), with
+- [This app](https://scotland.shinyapps.io/nhs-r-resources/) contains a range of
+  resources for R, such as links to online training and cheatsheets, and
+  information about internal R user groups.
+- The Transforming Publishing team also has a [resources
+  area](https://github.com/NHS-NSS-transforming-publications/resources), with
   useful resources on technical issues such as version control.
-- If using git
-  for version control, you should follow our team's [**GitHub
-  guidance**](https://github.com/NHS-NSS-transforming-publications/GitHub-guidance)
-  on workflow and security.
+- There is [GitHub
+  guidance](https://github.com/NHS-NSS-transforming-publications/GitHub-guidance)
+  on workflow and security when using git for version control.
 
-
-## Transformed Publications
+## Examples of transformed publications
 
 ISD has developed a new web-based way of releasing statistical publications to
 our users and has now released two publications in this format: [Acute Hospital
@@ -75,23 +74,20 @@ data.
 ### User engagement
 
 It is vital that users are part of the development, or re-development, of a
-statistical publication so that we can ensure that the final product meets their
-needs and is usable. This means involving users before, during and after
-development.
-
-- *Coming soon*: User engagement guidance paper
-- *Coming soon*: Usability testing guidance paper
+statistical publication so that their needs are met. This means involving users
+before, during and after development.
 
 ### Transforming output
 
-- Use this [**blank RShiny
-  template**](https://github.com/Health-SocialCare-Scotland/rshiny-project-structure)
-  when starting to build a new app or dashboard to ensure you have a sensible
-  workflow and structure.
-- Follow these examples of our existing RShiny dashboards for good practice in
-  terms of both coding and design: [**Psychiatric Inpatient Activity Data
-  Explorer
-  code**](https://github.com/Health-SocialCare-Scotland/Psychiatric-Inpatient-Activity)
-  and [**Acute Activity Data Explorer
-  code**](https://github.com/Health-SocialCare-Scotland/Hospital-Acute-Activity).
-- *Coming soon*: Chart and dashboard guidance paper
+There is a [blank RShiny
+template](https://github.com/Health-SocialCare-Scotland/rshiny-project-structure)
+to use when starting to build a new app or dashboard to ensure you have a
+sensible workflow and structure.
+
+Here are examples of ISD's existing RShiny dashboards for good practice in terms
+of both coding and design:
+
+* [Psychiatric Inpatient Activity Data Explorer
+  code](https://github.com/Health-SocialCare-Scotland/Psychiatric-Inpatient-Activity)
+* [Acute Activity Data Explorer
+  code](https://github.com/Health-SocialCare-Scotland/Hospital-Acute-Activity).
