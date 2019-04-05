@@ -13,6 +13,6 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 * [GangStaS Data RAP](https://gss.civilservice.gov.uk/blog/gangstas-data-rap/)
 * [RAP champions meet for the first time](https://gss.civilservice.gov.uk/news/rap-champions-meet-for-the-first-time/)
 * [Amendment rate of GOV.UK statistics publications](./article-2019-01-15-govuk-amendments.html)
-* [Introducing the RAP website](./blog-2019-04-01-introducing-rap-website.html)
+* [Introducing the RAP website](./blog-2019-04-05-introducing-rap-website.html)
 :::
 
