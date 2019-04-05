@@ -1,0 +1,169 @@
+# Benefits to government from Reproducible Analytical Pipelines
+
+By Jonah Peter Adaun, Matt Gregory and Matt Upson, in 2017.
+
+## Reproducible Analytical Pipelines
+
+This case study looks at the benefits of using Reproducible Analytical Pipelines
+(RAP) in producing official national statistics. Open source tools have been
+used to reproduce statistics in 3 departments: MOJ, DCMS and DFE.
+
+We have looked at the process before (see Figure 1 below) and after (see Figure
+2 below) software development skills have been gained by the analysts. This has
+been used to estimate the potential efficiency savings from adopting RAP across
+government. There are also qualitative benefits such as building capability to
+use a programming language to making the quality assurance process simpler. (See
+wider benefits section below)
+
+GDS has previously blogged about RAP and on the potential for it to transform
+the process of producing official statistics. This included collaborative
+efforts with statisticians and data scientists in the above departments used in
+this case study. These blogs also discuss the journey to engage cross-government
+and others with the ideas of RAP such as departmental heads of statistics
+profession.
+
+We have blogged about this work on the GOV.UK website in [March
+2017](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/)
+and [November
+2017](https://dataingovernment.blog.gov.uk/2017/11/27/transforming-the-process-of-producing-official-statistics/).
+
+### Official statistics production process
+
+Producing official statistics for publications is a key function of many teams
+across government. It can be a time-consuming and meticulous process to ensure
+that statistics are accurate and timely. With open source software becoming more
+widely used, there are now a range of tools and techniques that can be used to
+reduce production time, whilst maintaining and even improving the quality of
+publications.
+
+The process for official statistics production in Government varies widely
+across departments. The short description here is not definitive, but processes
+often have some or all of the following steps:
+
+#### Figure 1: Statistics production process simplified
+
+![Five boxes and the GOV.UK crown connected by arrows from left to right. 1 Data
+store, 2 Statistical software, 3 Spreadsheet, 4 Word processor, 5 pdf, 6 GOV.UK
+crown](./images/statistics-production-process.png)
+
+### What RAP does
+
+RAP borrows ideas from software development and academia to automate
+time-consuming processes of data assembly, verification and integration,
+generation of charts and tables, and set up and populate statistical reports.
+There are potential efficiency savings for analysts, freeing them up to focus on
+the interpretation of the results - turning four steps into one using a file
+format that allows intermingling of code and prose. This process effectively
+turns analysis into high quality documents, reports, presentation or dashboards
+that can be easily reproduced.
+
+#### Figure 2: Data product production using Open Source programming languages such as R
+
+![Two boxes and the GOV.UK crown connected by arrows from left to right. 1 Data
+store, 2 R Markdown, 3 GOV.UK
+crown](./images/data-product-production-process.png)
+
+RAP reduces the number of stages in the statistical production process which
+saves time, money and also improving the quality assurance of publications by
+analysts. The main savings come from reduced time spent manually doing quality
+assurance of the process outlined in Figure 1. Instead, RAP enshrines business
+and statistical knowledge into code and documentation as part of a software
+package. However, there are also the costs of analysts learning an open source
+language which are factored into estimating the benefits from using this method.
+
+## Method
+
+This case study has looked at the benefits of RAP from several departments:
+DCMS, MOJ and DFE. We have generalised the average staff time savings per
+publication (or efficiency gains after RAP skills have been acquired) to other
+official national statistical publications.
+
+We have monetised the benefits of analysts using RAP by looking at the time it
+took to produce the publication compared to after RAP skills have been acquired.
+This method also includes the time spent building up capability to use the
+method.
+
+We have generalised the average efficiency savings (£8.8k) from the case study
+to approximately 17,000 statistical publications across government. We estimate
+between £90m and £149m efficiency savings depending on the number of official
+statistical publications that benefit from RAP. There are a further 1,462
+upcoming publications that could also benefit from RAP but are yet to be
+released.
+
+### Efficiency savings 1
+
+This benefit refers to the total estimated efficiency savings once RAP skills
+have been acquired on average for each publication.
+
+We have estimated this using approx. 17k statistical publications across
+government (https://www.gov.uk/government/statistics). There are a further
+approximately 1.4k upcoming statistics that could also benefit from RAP which
+have not been released. We have allowed for a margin of error in our estimates.
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption">Estimated efficiency savings from stats publications</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Number of publications RAP
+      benefits</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Average annual saving per publication</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell--numeric">16,965 (100%)</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£8.8k</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£149M</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell--numeric">13,572 (80%)</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£8.8k</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£119M</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-table__cell--numeric">10,179 (60%)</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£8.8k</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£90M</td>
+    </tr>
+  </tbody>
+</table>
+
+### Efficiency savings 2
+
+This is based on the average savings from our case study per publication on an
+annual basis -  also once RAP skills have been acquired. RAP is most beneficial
+for publications that are more frequent. Official stats publications that are a
+one-off might not benefit from RAP due to the time and effort required for an
+analyst to learn the skills and for the code to be developed.
+
+#### Average annual saving per publication
+
+<p class="govuk-body govuk-!-font-size-80">£8.8k</p>
+
+This is the annual monetised efficiency saving or gains (across 4 publications:
+3 in Department for Education and 1 In Digital Culture Media and Sport) in year
+2 once the initial costs in year 1 (approx. £2.5k in case studies) of learning
+RAP techniques in R or other programming language.
+
+## Wider benefits
+
+Beyond the efficiency savings, other benefits come from building a process that
+is fully transparent, auditable and verifiable – reducing risk and improving
+quality. The result has been the delivery of RAP to automate the production of
+statistical reports across Government.
+
+Qualitative benefits of RAP include:
+
+1. Transfers software development best practice into the statistical domain
+1. Reduced risk of knowledge loss e.g. when people move jobs
+1. More robust and timely analysis compared to traditional methods
+1. Transparent analysis and quality assurance
+1. Builds staff capabilities enabling them to use a programming language
+1. Morale boost for analysts through automating laborious tasks
+1. RAP can allow analysts to rationalise the process and leverage datasets to
+   speed handling of detailed Parliamentary Questions and Freedom of Information
+   requests
+1. Online resource built called a Massive Online Open Course (MOOC) and freely
+   available online for analysts in government and elsewhere to use. This
+   resource also captures data as students complete the course.

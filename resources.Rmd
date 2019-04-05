@@ -8,8 +8,9 @@ channel](https://govdatascience.slack.com/messages/C6H22U3H9/)
 GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 
 ::: {.unbulleted-list}
-* [NHS NSS Transforming Publications Toolkit](resource-nhs-nss-transforming-publications-toolkit.html)
+* [Case Study: Benefits of RAP](resource-case-study-benefits-2017.html)
 * [How to ask for help on Slack](resource-nhs-nss-transforming-publications-toolkit.html)
+* [NHS NSS Transforming Publications Toolkit](resource-nhs-nss-transforming-publications-toolkit.html)
 :::
 
 
