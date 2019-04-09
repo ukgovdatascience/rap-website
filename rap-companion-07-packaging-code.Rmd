@@ -12,7 +12,7 @@ One of the difficulties that can arise in the more manual methods of statistics 
 > Packages are the fundamental units of reproducible R code. They include reusable R functions, the documentation that describes how to use them, and sample data.
 - Hadley Wickham
 
-Since it is a matter of statute that we produce our statistical publications, it is essential that our publications are as reproducible as possible. Packaging up the code can also help with institutional knowledge transfer. This was exemplified in the chapter [Exemplar](./rap-comapnion-04-exemplar.html) where we explored help files associated with code using the R `?` function.
+Since it is a matter of statute that we produce our statistical publications, it is essential that our publications are as reproducible as possible. Packaging up the code can also help with institutional knowledge transfer. This was exemplified in the chapter [Exemplar](./rap-companion-04-exemplar.html) where we explored help files associated with code using the R `?` function.
 
 ```{r eval=FALSE}
 library(eesectors)

@@ -1,6 +1,6 @@
 # Ask for help on Slack
 
-The [govdatascience Slack](govdatascience.slack.com) is a friendly place to ask
+The [govdatascience Slack](https://govdatascience.slack.com) is a friendly place to ask
 for help from other people in the civil service.  Here are some ways you can
 use it, and make it easier for people to help you.
 
