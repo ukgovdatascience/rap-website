@@ -5,7 +5,7 @@ guides and resources to support the modernisation of both the back end
 production of statistical products ([Reproducible Analytical
 Pipelines](#reproducible-analytical-pipelines)) and the user-facing output of
 statistical products to a digital platform ([Transformed
-Publications](#transformed-publications)). These tools will also be helpful when
+Publications](#examples-of-transformed-publications)). These tools will also be helpful when
 moving from a proprietary software such as SPSS or SAS, to an open source
 software such as R for any statistical analyses. If you have any questions about
 this toolkit then please contact the team at
