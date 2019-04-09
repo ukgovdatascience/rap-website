@@ -3867,13 +3867,25 @@ color: #d14;
             <ul id="navigation" class="govuk-header__navigation " aria-label="Top Level Navigation">
               <!-- items, beginning with nav-item-active then nav-item-other -->
                           <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="index.html">Home</a>
+                <a class="govuk-header__link" href="index.html">
+                  <!-- link name -->
+                  Home
+                </a>
               </li>            <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="companion-index.html">Companion</a>
+                <a class="govuk-header__link" href="companion-index.html">
+                  <!-- link name -->
+                  Companion
+                </a>
               </li>            <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="articles.html">Articles</a>
+                <a class="govuk-header__link" href="articles.html">
+                  <!-- link name -->
+                  Articles
+                </a>
               </li>            <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="resources.html">Resources</a>
+                <a class="govuk-header__link" href="resources.html">
+                  <!-- link name -->
+                  Resources
+                </a>
               </li>
             </ul>
           </nav>
@@ -3917,9 +3929,9 @@ Dependency and reproducibility
 </li>
 </ol>
 </div>
-<h1 class="govuk-heading-xl">Dependency and reproducibility</h1>
+<h1 id="dependency-and-reproducibility" class="govuk-heading-xl">Dependency and reproducibility</h1>
 <p><span class="govuk-body"><em>This section is in development. Please <a href="https://github.com/ukgovdatascience/rap_companion/issues/89" class="govuk-link">contribute to the discussion</a>.</em></span></p>
-<h2 class="govuk-heading-l">Other people’s code</h2>
+<h2 id="other-peoples-code" class="govuk-heading-l">Other people’s code</h2>
 <p><span class="govuk-body">You’re likely to make use of other people’s code when you develop your RAP project. Maybe you’ve imported packages to perform a statistical test, for example. These dependencies can be extremely helpful. They can:</span></p>
 <ul class="govuk=list govuk-list--bullet">
 <li class="govuk-body">
@@ -3938,13 +3950,13 @@ help to reduce the size of your scripts and make them more human-readable
 limit the need for you to update and fix problems yourself
 </li>
 </ul>
-<h3 class="govuk-heading-m">Limitations</h3>
+<h3 id="limitations" class="govuk-heading-m">Limitations</h3>
 <p><span class="govuk-body">Most statistical publications are <a href="https://www.gov.uk/government/statistics/announcements" class="govuk-link">updated on a scheduled basis</a> when new data become available.</span></p>
 <p><span class="govuk-body">It’s possible that you’ll get some errors when you reuse your RAP project code for the next update, even if everything worked perfectly last time. Why? The maintainers of your dependencies may have changed the code and it no longer works as you expect.</span></p>
 <p><span class="govuk-body">Changes might not impact your publication. If changes do have an impact, the best case is that you’ll get a helpful error message. At worst, your code will execute with an imperceptible but impactful error. Maybe a rounding function now rounds to the nearest 10 instead of the nearest 1000.</span></p>
 <p><span class="govuk-body">The problem is compounded if your dependencies depend on other dependencies, or if two of your dependencies require conflicting versions of a third dependency. You could get stuck in so-called <a href="https://en.wikipedia.org/wiki/Dependency_hell" class="govuk-link">dependency hell</a>.</span></p>
 <p><span class="govuk-body">The bottom line: your publication is dependent on particular software <em>and</em> its state at a given time. How can you deal with this? This chapter considers a few possibilities given variation in tools, techniques and IT restrictions.</span></p>
-<h3 class="govuk-heading-m">Think lightweight</h3>
+<h3 id="think-lightweight" class="govuk-heading-m">Think lightweight</h3>
 <p><span class="govuk-body">First, think about what you can do to reduce the chance of problems. To put it succinctly, <a href="http://www.tinyverse.org/" class="govuk-link">the tinyverse philosophy of dependency management</a> suggests that:</span></p>
 <div class="govuk-inset-text">
 <p><span class="govuk-body">Lightweight is the right weight</span></p>
@@ -3964,10 +3976,10 @@ restrict yourself to ‘stable’ packages for which recent changes were restric
 review regularly your dependencies to establish if better alternatives exist
 </li>
 </ul>
-<h3 class="govuk-heading-m">Record the packages and versions</h3>
+<h3 id="record-the-packages-and-versions" class="govuk-heading-m">Record the packages and versions</h3>
 <p><span class="govuk-body">It’s not enough to simply minimise your dependencies. You need to think about how this impacts the reproducibility of your project. To ensure that your scripts are executed in the same way next time, you need to record the packages and their versions in some way. Then you or a colleague can recreate the environment in which the outputs were produced the first time round.</span></p>
-<h2 class="govuk-heading-l">Approaches</h2>
-<h3 class="govuk-heading-m">Version numbers</h3>
+<h2 id="approaches" class="govuk-heading-l">Approaches</h2>
+<h3 id="version-numbers" class="govuk-heading-m">Version numbers</h3>
 <p><span class="govuk-body">Maintainers signal updates by increasing the version number of their software. This could be a simple patch of an earlier version’s bug (e.g. version 3.2.7 replaces 3.2.6), or perhaps a major <em>breaking</em> change (e.g. version 3.2.6 is update to version 4.0.0).</span></p>
 <p><span class="govuk-body">There are many ways to record each of the packages used in our analysis and their version numbers.</span></p>
 <p><span class="govuk-body">In R you could, for example, use the <code>session_info()</code> function from <code>devtools</code> package. This prints details about the current state of the working environment.</span></p>
@@ -4014,9 +4026,9 @@ records <em>every</em> package and its version <em>on your whole system</em>, no
 isn’t a reproducible or automated process
 </li>
 </ul>
-<h3 class="govuk-heading-m">Environments for dependency management</h3>
+<h3 id="environments-for-dependency-management" class="govuk-heading-m">Environments for dependency management</h3>
 <p><span class="govuk-body">Ideally we want to automate the process of recording packages and their version numbers and have them installed in an isolated environment that’s specific to our project. Doing this makes the project more portable – you could run it easily from another machine that’s configured differently to your own – and it would therefore be more reproducible.</span></p>
-<h4 class="govuk-heading-s">Package managers in R</h4>
+<h4 id="package-managers-in-r" class="govuk-heading-s">Package managers in R</h4>
 <p><span class="govuk-body">There is currently no consensus approach for package management in R. Below are a few options, but this is a non-exhaustive list.</span></p>
 <p><span class="govuk-body">The <a href="https://rstudio.github.io/packrat/" class="govuk-link"><code>packrat</code> package</a> is commonly used but <a href="https://rstudio.github.io/packrat/limitations.html" class="govuk-link">has known issues</a>. The RAP community has noted in particular that it has a problem compiling older package versions on Windows. <a href="https://github.com/ukgovdatascience/rap_companion/issues/86" class="govuk-link">Join the discussion for more information</a>.</span></p>
 <p><span class="govuk-body"><a href="https://rstudio.github.io/packrat/walkthrough.html" class="govuk-link">A <code>packrat</code> walkthrough is available</a>, but the basic process is:</span></p>
@@ -4037,7 +4049,7 @@ When opening the project fresh on a new machine, Packrat automates the process o
 <p><span class="govuk-body">As for other options, <a href="https://github.com/RevolutionAnalytics/checkpoint/wiki" class="govuk-link">the <code>checkpoint</code> package</a> from Microsoft’s Revolution Analytics works like <code>packrat</code> but you simply <code>checkpoint()</code> your project for a given <em>date</em>. This allows you to call the packages from that date into a private library for that project. It works by fetching the packages from the <a href="https://mran.microsoft.com/" class="govuk-link">Microsoft R Application Network (MRAN)</a>, which is a daily snapshot of <a href="https://cran.r-project.org/" class="govuk-link">CRAN</a>. Note that this doesn’t permit control of packages that are hosted anywhere other than CRAN, such as Bioconductor or GitHub, and relies on Microsoft continuing to snapshot and store CRAN copies in MRAN.</span></p>
 <p><span class="govuk-body">Another option is <code>jetpack</code>, which is different to <code>packrat</code> because it uses a DESCRIPTION file to list your dependencies. <a href="http://r-pkgs.had.co.nz/description.html" class="govuk-link">DESCRIPTION files are used in package development</a> to store information, including that package’s dependencies. This is a lightweight option and can be run from the command line.</span></p>
 <p><span class="govuk-body">Paid options also exist, but are obviously less accessible and require maintenance. One example is <a href="https://www.rstudio.com/products/package-manager/" class="govuk-link">RStudio’s Package Manager</a>.</span></p>
-<h4 class="govuk-heading-s">Virtual environments in Python</h4>
+<h4 id="virtual-environments-in-python" class="govuk-heading-s">Virtual environments in Python</h4>
 <p><span class="govuk-body">In Python we can easily create an isolated environment for our project and load packages into it. This is possible with tools like <a href="https://docs.python-guide.org/dev/virtualenvs/" class="govuk-link"><code>virtualenv</code> and <code>Pipenv</code></a>.</span></p>
 <p><span class="govuk-body">You can set up a virtual environment in your project folder, activate it, install any packages you need and then record them in a file for use in future. One way to do this is with <code>virtualenv</code>. After installation and having navigated to your project’s home folder, you can follow something like this from the command line:</span></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash app-tabs__container js-tabs__container"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">virtualenv</span> venv  <span class="co"># create virtual environment folder</span></a>
@@ -4048,8 +4060,8 @@ When opening the project fresh on a new machine, Packrat automates the process o
 <p><span class="govuk-body">When another user downloads your version-controlled project folder, the requirements.txt file will be there. Now they can create a virtual environment on their machine following steps 1 to 3 above, but rather than <code>pip install packageName</code> for each package they need, they can automate the process by installing everything from the requirements.txt file with:</span></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash app-tabs__container js-tabs__container"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">pip</span> install -r requirements.txt</a></code></pre></div>
 <p><span class="govuk-body">This will download the packages one by one into the virtual environment in their copy of the project virtual environment. Now they’ll be using the same packages you were when you developed your project.</span></p>
-<h2 class="govuk-heading-l">Containers</h2>
-<h3 class="govuk-heading-m">Theory</h3>
+<h2 id="containers" class="govuk-heading-l">Containers</h2>
+<h3 id="theory" class="govuk-heading-m">Theory</h3>
 <p><span class="govuk-body">Good package management deals with one of the major problems of dependency hell. But the problem is bigger. Collaborators could still encounter errors if they:</span></p>
 <ul class="govuk=list govuk-list--bullet">
 <li class="govuk-body">
@@ -4076,7 +4088,7 @@ can be transported by various transport methods
 </li>
 </ul>
 <p><span class="govuk-body">This is what we want for our project as well. We want to put whatever we want inside, we want it to be isolated and we want to be able to run it from anywhere.</span></p>
-<h3 class="govuk-heading-m">Docker</h3>
+<h3 id="docker" class="govuk-heading-m">Docker</h3>
 <p><span class="govuk-body">Docker can seem daunting at first.</span></p>
 <p><span class="govuk-body">It works like this:</span></p>
 <ol class="govuk-list govuk-list--number">
@@ -4091,7 +4103,7 @@ Other people can follow the dockerfile recipe to make their own copies of the de
 </li>
 </ol>
 <p><span class="govuk-body">You can learn more about this process by <a href="https://docker-curriculum.com/" class="govuk-link">following the curriculum on Docker’s website</a>. You can also read about the use of Docker <a href="https://dwpdigital.blog.gov.uk/2018/05/18/using-containers-to-deliver-our-data-projects/" class="govuk-link">in the Department for Work and Pensions</a> (DWP). Phil Chapman <a href="https://chapmandu2.github.io/post/2018/05/26/reproducible-data-science-environments-with-docker/" class="govuk-link">wrote more about the technical side of this process</a>.</span></p>
-<h3 class="govuk-heading-m">Making it easier</h3>
+<h3 id="making-it-easier" class="govuk-heading-m">Making it easier</h3>
 <p><span class="govuk-body">You don’t have to build everything from scratch. <a href="https://hub.docker.com/" class="govuk-link">Docker hub</a> is a big library of pre-prepared container images. For example, the <a href="https://hub.docker.com/u/rocker" class="govuk-link">rocker project on Docker hub</a> lists a number of images containing R-specific tools like <a href="https://hub.docker.com/r/rocker/tidyverse" class="govuk-link">rocker/tidyverse</a> that contains R, RStudio and <a href="https://tidyverse.tidyverse.org/" class="govuk-link">the tidyverse packages</a>. You can specify a rocker image in your dockerfile to make your life easier. Learn more about <a href="http://ropenscilabs.github.io/r-docker-tutorial/" class="govuk-link">rOpenSci labs tutorial</a></span></p>
 <p><span class="govuk-body">As well as rocker, R users can set up Docker from within an interactive R session: <a href="https://o2r.info/containerit/index.html" class="govuk-link">the <code>containerit</code> package</a> lets you create a dockerfile given the current state of your session. This simplifies the process a great deal.</span></p>
 <p><span class="govuk-body">R users can also read <a href="https://github.com/noamross/nyhackr-docker-talk" class="govuk-link">Docker for the useR</a> by Noam Ross and <a href="https://colinfay.me/docker-r-reproducibility/" class="govuk-link">an introduction to Docker for R users</a> by Colin Fay.</span></p>

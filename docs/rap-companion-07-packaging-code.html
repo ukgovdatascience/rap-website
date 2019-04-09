@@ -3867,13 +3867,25 @@ color: #d14;
             <ul id="navigation" class="govuk-header__navigation " aria-label="Top Level Navigation">
               <!-- items, beginning with nav-item-active then nav-item-other -->
                           <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="index.html">Home</a>
+                <a class="govuk-header__link" href="index.html">
+                  <!-- link name -->
+                  Home
+                </a>
               </li>            <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="companion-index.html">Companion</a>
+                <a class="govuk-header__link" href="companion-index.html">
+                  <!-- link name -->
+                  Companion
+                </a>
               </li>            <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="articles.html">Articles</a>
+                <a class="govuk-header__link" href="articles.html">
+                  <!-- link name -->
+                  Articles
+                </a>
               </li>            <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="resources.html">Resources</a>
+                <a class="govuk-header__link" href="resources.html">
+                  <!-- link name -->
+                  Resources
+                </a>
               </li>
             </ul>
           </nav>
@@ -3917,7 +3929,7 @@ Packaging code
 </li>
 </ol>
 </div>
-<h1 class="govuk-heading-xl">Packaging code</h1>
+<h1 id="packaging-code" class="govuk-heading-xl">Packaging code</h1>
 <p><span class="govuk-body">A package enshrines all the business knowledge used to create a corpus of work in one place; including the code and its relevant documentation.</span></p>
 <p><span class="govuk-body">One of the difficulties that can arise in the more manual methods of statistics production is that we have many different files relating to many different stages of the process, each of which needs to be documented, and kept up to date. Part of the heavy lifting can be done here with <a href="rap-companion-06-version-control.html" class="govuk-link">version control</a>, but we can go a step further: we can create a package of code. As Hadley Wickham (author of a number of essential packages for package development) puts it for R:</span></p>
 <div class="govuk-inset-text">
@@ -3927,13 +3939,13 @@ Packaging code
 <div class="sourceCode" id="cb1"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(eesectors)</a>
 <a class="sourceLine" id="cb1-2" title="2">?<span class="kw">clean_sic</span>()</a></code></pre></div>
 <p><span class="govuk-body">Linking the documentation to the code makes everything much easier to understand, and can help to minimising the time taken to bring new team members up to speed. This all meets the requirements of the <a href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government" class="govuk-link">AQUA</a> book in that all assumptions and constraints can be described in the package documentation asssociated tied to the relevant code.</span></p>
-<h2 class="govuk-heading-l">Essential reading</h2>
+<h2 id="essential-reading" class="govuk-heading-l">Essential reading</h2>
 <p><span class="govuk-body">Hadley Wickham’s <a href="http://r-pkgs.had.co.nz/" class="govuk-link">R Packages</a> book is an excellent and comprehensive introduction to developing your own package in R. It encourages you to start with the basics and improve over time; good advice.</span></p>
-<h2 class="govuk-heading-l">Development best practices for your package</h2>
-<h3 class="govuk-heading-m">Licensing your code</h3>
+<h2 id="development-best-practices-for-your-package" class="govuk-heading-l">Development best practices for your package</h2>
+<h3 id="licensing-your-code" class="govuk-heading-m">Licensing your code</h3>
 <p><span class="govuk-body">Developing your code as an R package will require you to specify a license for your code in the DESCRIPTION file (for example the <a href="https://github.com/DCMSstats/eesectors/blob/master/DESCRIPTION" class="govuk-link">eesectors</a> package uses the GPL-3 license). We quote the <a href="https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable#licensing-your-code" class="govuk-link">GDS Service Manual</a> by encouraging the use of an <a href="https://opensource.org/licenses" class="govuk-link">Open Source Initiative</a> compatible licence. For example, GDS uses the <a href="https://github.com/alphagov/styleguides/blob/master/licensing.md" class="govuk-link">MIT licence</a>.</span></p>
 <p><span class="govuk-body">It is also of note that all code produced by civil servants is automatically covered by <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/" class="govuk-link">Crown Copyright</a>.</span></p>
-<h3 class="govuk-heading-m">Acting as the custodian for your code</h3>
+<h3 id="acting-as-the-custodian-for-your-code" class="govuk-heading-m">Acting as the custodian for your code</h3>
 <p><span class="govuk-body">When you make your code open, you should:</span></p>
 <ul class="govuk=list govuk-list--bullet">
 <li class="govuk-body">
