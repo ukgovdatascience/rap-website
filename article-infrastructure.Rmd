@@ -1,0 +1,101 @@
+# Infrastructure for RAP
+
+RAP requires one or more programming languages, and a version control system.
+There are no other requirements.
+
+Some other tools are highly recommended.
+
+* Slack for conversing with the RAP community and other people working with data
+  in the UK civil service.  The [Gov Data Science
+  Slack](https://govdatascience.slack.com/messages/C6H22U3H9/) has many active
+  members across the civil service.  The #rap_collaboration channel is the best
+  place to ask questions about RAP, and there are channels for different
+  technologies, statistical methods and learning communities. [Most
+  departments](https://docs.google.com/spreadsheets/d/1pi7PL3LXddjwx7INkd0Ldxq_sBFW5MBrPFZvW9Y4ajA/edit#gid=0) allow access.
+* [GitHub](https://github.com/) or [GitLab](https://about.gitlab.com/) for
+  publishing code and collaborating within and beyond your team.  This website
+  is developed and published on GitHub.  Many [RAP
+  projects](https://docs.google.com/spreadsheets/d/1pwbcXwuMT4zignv5hghDS-eMxTkogwpX8Bt3bCL7SSA/edit#gid=1796469886)
+  are on GitHub.
+
+Consider the [Technology Code of
+Practice](https://www.gov.uk/government/publications/technology-code-of-practice/technology-code-of-practice#be-open-and-use-open-source),
+a set of criteria to help government design, build and buy technology.
+
+## Programming languages
+
+R and Python are the most popular programming languages for working with data.
+Lots of help is available for them within the RAP community and in general.
+Both languages are widely taught at universities to students in many fields, not
+just computer science, so it is often possible to recruit people with
+programming experience as well as a specialism in your area.
+
+JavaScript and C# (pronounced "C sharp") have also been used in RAP projects.
+HTML and CSS are used for publishing on the internet.  SQL is a language for use
+with databases and is often used alongside other languages.
+
+Most modern languages are free.
+
+See some
+[examples](https://docs.google.com/spreadsheets/d/1pwbcXwuMT4zignv5hghDS-eMxTkogwpX8Bt3bCL7SSA/edit#gid=1796469886)
+of RAP projects using different programming languages, sometimes a combination
+of different languages.
+
+## Software for writing code
+
+You can write code in almost any text editor, but you will be much more
+productive using software designed for writing code, called an IDE (integrated
+development environment).  There is a huge choice, and most of them are free.
+
+For writing code in the R language,
+[RStudio](https://govdatascience.slack.com/messages/C6H22U3H9/) is by far the
+most popular IDE.  It is free, and paid-for licences are also available that
+include enterprise features and support.
+
+There is no clear leader for the Python language.  [Visual Studio
+Code](https://code.visualstudio.com/), [Spyder](https://www.spyder-ide.org/) and
+[Pycharm](https://www.jetbrains.com/pycharm/) are popular, but there are many
+others.
+
+## Version control systems
+
+Version control systems track changes to your code.
+
+[Git](https://git-scm.com/) is the most widely used version control system.  It
+is supported by [GitHub](https://github.com/),
+[GitLab](https://about.gitlab.com/) and [BitBucket](https://bitbucket.org/),
+which are the biggest platforms for developing code collaboratively.  It would
+be unwise to choose a system not supported by those platforms.
+
+GitHub, GitLab and BitBucket are online platforms for developing code
+collaboratively.  They are free, with some restrictions that are relaxed if you
+pay a subscription.  You can host GitLab yourself, offline.
+
+## Continuous integration
+
+Continuous integration systems perform some action whenever you change your
+code.  Usually they are used to test your code by running a set of tests that
+you have written, and alert you to faults.  You won't need continuous
+integration straight away, but once you are maintaining several projects it can
+save you a lot of time.
+
+[Travis](https://travis-ci.org/) is one of the most widely used continuous
+integration systems.  It is an online service and integrates well with GitHub.
+It can be used securely with code that is private.  It is free, and you can pay
+for more features and support.  You can host Travis yourself, offline.
+
+## Package managers
+
+Whatever programming language you choose, you will need to extend it by
+installing 'packages' or 'libraries'.  A package is a set of code that someone
+else has written and published to help other people solve particular problem.
+They are a bit like apps on your phone -- you can manage without them, but you
+will be much slower and make more mistakes.
+
+Unless your analysts are allowed to install any package they like, you will need
+a way to control what they may install, without delaying them.  There are no
+good ways to do this yet.  You are encouraged to ask some [RAP
+Champions](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/)
+for advice, or ask on
+[Slack](https://govdatascience.slack.com/messages/C6H22U3H9/) in the
+#rap_collaboration or #analytical-platforms channels.
