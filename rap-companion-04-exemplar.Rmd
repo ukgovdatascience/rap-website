@@ -10,7 +10,7 @@ paradigm.
 
 In this Chapter we demonstrate a RAP package developed in collaboration with the Department for Culture Media and Sport (DCMS). This package enshrines all the pertinent business knowledge in one corpus.
 
-```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html')}
+```{r rap-companion-04-exemplar-1, fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html')}
 knitr::include_graphics('images/eesectors_package.png', dpi = NA)
 ```
 
@@ -36,14 +36,14 @@ We demonstrate this process using the DCMS publication, refer to [Chapter 3 - GV
 
 What data do you need to produce this table?
 
-```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/544103/DCMS_Sectors_Economic_Estimates_-_August_2016.pdf'}
+```{r rap-companion-04-exemplar-2, fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/544103/DCMS_Sectors_Economic_Estimates_-_August_2016.pdf'}
 knitr::include_graphics('images/gva_table_3_1.png', dpi = NA)
 ```
 
 Variables: Year, Sector, GVA
 
 What data do you need to produce this figure?
-```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/544103/DCMS_Sectors_Economic_Estimates_-_August_2016.pdf'}
+```{r rap-companion-04-exemplar-3, fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/544103/DCMS_Sectors_Economic_Estimates_-_August_2016.pdf'}
 knitr::include_graphics('images/gva_fig_3_1.png', dpi = NA)
 ```
 
@@ -51,7 +51,7 @@ The GVA of each Sector by Year.
 Variables: Year, Sector, GVA
 
 What data do you need to produce this figure?
-```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/544103/DCMS_Sectors_Economic_Estimates_-_August_2016.pdf'}
+```{r rap-companion-04-exemplar-4, fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/544103/DCMS_Sectors_Economic_Estimates_-_August_2016.pdf'}
 knitr::include_graphics('images/gva_fig_3_2.png', dpi = NA)
 ```
 
@@ -59,7 +59,7 @@ Total GVA across all sectors.
 Variables: Year, Sector, GVA
 
 What data do you need to produce this figure?
-```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/544103/DCMS_Sectors_Economic_Estimates_-_August_2016.pdf'}
+```{r rap-companion-04-exemplar-5, fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/544103/DCMS_Sectors_Economic_Estimates_-_August_2016.pdf'}
 knitr::include_graphics('images/gva_fig_3_3.png', dpi = NA)
 ```
 
@@ -166,11 +166,11 @@ As the code is stored on Github we can access the current master version as well
 
 Installation means the package is on our computer but it is not loaded into the computer's working memory. We also load any additional packages that might be useful for exploring the package or data therein.
 
-```{r, eval=FALSE}
+```{r rap-companion-04-exemplar-6, eval=FALSE}
 devtools::install_github('ukgovdatascience/eesectors')
 ```
 
-```{r, echo = FALSE}
+```{r rap-companion-04-exemplar-7, echo = FALSE}
 library(eesectors)
 ```
 
@@ -196,7 +196,7 @@ If you look at the functions within the package within R Studio using the packag
 
 The `GVA_by_sector_2016` provides test data to work with during development. This will be important for the development of other packages for different reports. You need a precise understanding of how you go from raw data, to aggregated data (such as `GVA_by_sector_2016`) to the final figure. What are your inputs (arguments) and outputs? In some cases where your master data is stored in a particularly difficult for a machine to read you may prefer having a human to this extraction step.
 
-```{r}
+```{r rap-companion-04-exemplar-8}
 dplyr::glimpse(GVA_by_sector_2016)
 x <- GVA_by_sector_2016
 ```
@@ -207,20 +207,20 @@ Human's are not particularly good at Quality Assurance (QA), especially when wor
 
 The author uses messages to tell us what checks are being conducted or we can look at the body of the function if we are interested. This is useful if you are considering developing your own package, it will help you struture the message which are useful for the user.
 
-```{r}
+```{r rap-companion-04-exemplar-9}
 
 gva <- year_sector_data(GVA_by_sector_2016)
 ```
 
 This is a semi-automated process so the user should check the Checks and ensure they meet their usual checks that would be conducted manually. If a new check or test becomes necessary then it should be implemented by changing the code.
 
-```{r}
+```{r rap-companion-04-exemplar-10}
 body(year_sector_data)
 ```
 
 The function is  structured to tell the user what check is being made and then running that check given the input `x`. If the input fails a check the function is stopped with a useful diagnostic message for the user. This is achieved using `if` and the opposite of the desired feature of `x`.
 
-```{r eval=FALSE}
+```{r rap-companion-04-exemplar-11, eval=FALSE}
     message("Checking x has correct columns...")
     if (length(colnames(x)) != 3)
         stop("x must have three columns: sector, year, and one of GVA, export, or x")
@@ -233,14 +233,14 @@ For example, if `x` does not have exactly three columns we `stop`.
 
 The output object is different to the input as expected, yet it does contain the initial data.
 
-```{r}
+```{r rap-companion-04-exemplar-12}
 identical(gva$df, x)
 
 ```
 
 The rest of the list contains other details that could be changed at a later date if required, demonstrating defensive programming. For example, the sectors that are of interest to DCMS have changed and may change again.
 
-```{r eval=FALSE}
+```{r rap-companion-04-exemplar-13, eval=FALSE}
 ?year_sector_data
 ```
 
@@ -249,7 +249,7 @@ Let's take a closer look at this function using the help and other standard func
 
 The help says it produces a custom class of object with five slots.
 
-```{r}
+```{r rap-companion-04-exemplar-14}
 isS4(gva)
 class(gva)
 ```
@@ -260,7 +260,7 @@ It's not actually an S4 object, by slots the author means a list of objects. Thi
 
 The input, which is likely a bunch of [not tidy or messy](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) spreadsheets needs to be wrangled and aggregated (if necessary) for input into the functions prefixed by `figure`.
 
-```{r}
+```{r rap-companion-04-exemplar-15}
 dplyr::glimpse(GVA_by_sector_2016)
 ```
 
@@ -270,7 +270,7 @@ dplyr::glimpse(GVA_by_sector_2016)
 
 With the data in the appropriate form to be received as an argument or input for the `figure` family of functions, we can proceed to plot.
 
-```{r}
+```{r rap-companion-04-exemplar-16}
 figure3.1(x = gva)
 
 ```
@@ -279,7 +279,7 @@ Again we can look at the details of the plot. We could change the body of the fu
 
 Reading the code we see it filters the data, makes the variables it needs, refactors the `sector` variable and then plots it.
 
-```{r}
+```{r rap-companion-04-exemplar-17}
 body(figure3.1)
 
 ```
@@ -288,7 +288,7 @@ We can inspect and change an argument if we feel inclined or if a new colour sch
 
 This all looks straight forward and we can inspect the other functions for generating the figures or plot output.
 
-```{r}
+```{r rap-companion-04-exemplar-18}
 body(figure3.2)
 body(figure3.3)
 ```
