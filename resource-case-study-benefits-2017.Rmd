@@ -100,34 +100,13 @@ government (https://www.gov.uk/government/statistics). There are a further
 approximately 1.4k upcoming statistics that could also benefit from RAP which
 have not been released. We have allowed for a margin of error in our estimates.
 
-<table class="govuk-table">
-  <caption class="govuk-table__caption">Estimated efficiency savings from stats publications</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th class="govuk-table__header" scope="col">Number of publications RAP
-      benefits</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Average annual saving per publication</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Total</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell govuk-table__cell--numeric">16,965 (100%)</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£8.8k</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£149M</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell govuk-table__cell--numeric">13,572 (80%)</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£8.8k</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£119M</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell govuk-table__cell--numeric">10,179 (60%)</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£8.8k</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">£90M</td>
-    </tr>
-  </tbody>
-</table>
+Table: Estimated efficiency savings from stats publications
+
+| Number of publications RAP benefits	| Average annual saving per publication	| Total |
+|------------------------------------:|--------------------------------------:|------:|
+| 16,965 (100%)	                      | £8.8k	                                | £149M |
+| 13,572 (80%)	                      | £8.8k	                                | £119M |
+| 10,179 (60%)	                      | £8.8k	                                | £90M  |
 
 ### Efficiency savings 2
 
