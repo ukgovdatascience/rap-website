@@ -3930,23 +3930,41 @@ Packaging code
 </ol>
 </div>
 <h1 id="packaging-code" class="govuk-heading-xl">Packaging code</h1>
-<p><span class="govuk-body">A package enshrines all the business knowledge used to create a corpus of work in one place; including the code and its relevant documentation.</span></p>
-<p><span class="govuk-body">One of the difficulties that can arise in the more manual methods of statistics production is that we have many different files relating to many different stages of the process, each of which needs to be documented, and kept up to date. Part of the heavy lifting can be done here with <a href="rap-companion-06-version-control.html" class="govuk-link">version control</a>, but we can go a step further: we can create a package of code. As Hadley Wickham (author of a number of essential packages for package development) puts it for R:</span></p>
+<p class="govuk-body">
+A package enshrines all the business knowledge used to create a corpus of work in one place; including the code and its relevant documentation.
+</p>
+<p class="govuk-body">
+One of the difficulties that can arise in the more manual methods of statistics production is that we have many different files relating to many different stages of the process, each of which needs to be documented, and kept up to date. Part of the heavy lifting can be done here with <a href="rap-companion-06-version-control.html" class="govuk-link">version control</a>, but we can go a step further: we can create a package of code. As Hadley Wickham (author of a number of essential packages for package development) puts it for R:
+</p>
 <div class="govuk-inset-text">
-<p><span class="govuk-body">Packages are the fundamental units of reproducible R code. They include reusable R functions, the documentation that describes how to use them, and sample data. - Hadley Wickham</span></p>
+<p class="govuk-body">
+Packages are the fundamental units of reproducible R code. They include reusable R functions, the documentation that describes how to use them, and sample data. - Hadley Wickham
+</p>
 </div>
-<p><span class="govuk-body">Since it is a matter of statute that we produce our statistical publications, it is essential that our publications are as reproducible as possible. Packaging up the code can also help with institutional knowledge transfer. This was exemplified in the chapter <a href="./rap-companion-04-exemplar.html" class="govuk-link">Exemplar</a> where we explored help files associated with code using the R <code>?</code> function.</span></p>
+<p class="govuk-body">
+Since it is a matter of statute that we produce our statistical publications, it is essential that our publications are as reproducible as possible. Packaging up the code can also help with institutional knowledge transfer. This was exemplified in the chapter <a href="./rap-companion-04-exemplar.html" class="govuk-link">Exemplar</a> where we explored help files associated with code using the R <code>?</code> function.
+</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r app-tabs__container js-tabs__container"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(eesectors)</a>
 <a class="sourceLine" id="cb1-2" title="2">?<span class="kw">clean_sic</span>()</a></code></pre></div>
-<p><span class="govuk-body">Linking the documentation to the code makes everything much easier to understand, and can help to minimising the time taken to bring new team members up to speed. This all meets the requirements of the <a href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government" class="govuk-link">AQUA</a> book in that all assumptions and constraints can be described in the package documentation asssociated tied to the relevant code.</span></p>
+<p class="govuk-body">
+Linking the documentation to the code makes everything much easier to understand, and can help to minimising the time taken to bring new team members up to speed. This all meets the requirements of the <a href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government" class="govuk-link">AQUA</a> book in that all assumptions and constraints can be described in the package documentation asssociated tied to the relevant code.
+</p>
 <h2 id="essential-reading" class="govuk-heading-l">Essential reading</h2>
-<p><span class="govuk-body">Hadley Wickham’s <a href="http://r-pkgs.had.co.nz/" class="govuk-link">R Packages</a> book is an excellent and comprehensive introduction to developing your own package in R. It encourages you to start with the basics and improve over time; good advice.</span></p>
+<p class="govuk-body">
+Hadley Wickham’s <a href="http://r-pkgs.had.co.nz/" class="govuk-link">R Packages</a> book is an excellent and comprehensive introduction to developing your own package in R. It encourages you to start with the basics and improve over time; good advice.
+</p>
 <h2 id="development-best-practices-for-your-package" class="govuk-heading-l">Development best practices for your package</h2>
 <h3 id="licensing-your-code" class="govuk-heading-m">Licensing your code</h3>
-<p><span class="govuk-body">Developing your code as an R package will require you to specify a license for your code in the DESCRIPTION file (for example the <a href="https://github.com/DCMSstats/eesectors/blob/master/DESCRIPTION" class="govuk-link">eesectors</a> package uses the GPL-3 license). We quote the <a href="https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable#licensing-your-code" class="govuk-link">GDS Service Manual</a> by encouraging the use of an <a href="https://opensource.org/licenses" class="govuk-link">Open Source Initiative</a> compatible licence. For example, GDS uses the <a href="https://github.com/alphagov/styleguides/blob/master/licensing.md" class="govuk-link">MIT licence</a>.</span></p>
-<p><span class="govuk-body">It is also of note that all code produced by civil servants is automatically covered by <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/" class="govuk-link">Crown Copyright</a>.</span></p>
+<p class="govuk-body">
+Developing your code as an R package will require you to specify a license for your code in the DESCRIPTION file (for example the <a href="https://github.com/DCMSstats/eesectors/blob/master/DESCRIPTION" class="govuk-link">eesectors</a> package uses the GPL-3 license). We quote the <a href="https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable#licensing-your-code" class="govuk-link">GDS Service Manual</a> by encouraging the use of an <a href="https://opensource.org/licenses" class="govuk-link">Open Source Initiative</a> compatible licence. For example, GDS uses the <a href="https://github.com/alphagov/styleguides/blob/master/licensing.md" class="govuk-link">MIT licence</a>.
+</p>
+<p class="govuk-body">
+It is also of note that all code produced by civil servants is automatically covered by <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/" class="govuk-link">Crown Copyright</a>.
+</p>
 <h3 id="acting-as-the-custodian-for-your-code" class="govuk-heading-m">Acting as the custodian for your code</h3>
-<p><span class="govuk-body">When you make your code open, you should:</span></p>
+<p class="govuk-body">
+When you make your code open, you should:
+</p>
 <ul class="govuk=list govuk-list--bullet">
 <li class="govuk-body">
 use <a href="https://semver.org/" class="govuk-link">Semantic Versioning</a> to make it clear when you release an update to your code
@@ -3955,7 +3973,9 @@ use <a href="https://semver.org/" class="govuk-link">Semantic Versioning</a> to 
 be clear about how you’ll communicate with users of your code, for example on support channels and email lists
 </li>
 </ul>
-<p><span class="govuk-body">Encouraging contributions from people who use your code can help make your code more robust, as people will spot bugs and suggest new features. If you would like to encourage contributions, you can create a <a href="https://github.com/blog/1184-contributing-guidelines" class="govuk-link">CONTRIBUTING.md</a> file on Github, like we <a href="https://github.com/ukgovdatascience/rap_companion/blob/master/CONTRIBUTING.md" class="govuk-link">demonstrate for this book</a>.</span></p>
+<p class="govuk-body">
+Encouraging contributions from people who use your code can help make your code more robust, as people will spot bugs and suggest new features. If you would like to encourage contributions, you can create a <a href="https://github.com/blog/1184-contributing-guidelines" class="govuk-link">CONTRIBUTING.md</a> file on Github, like we <a href="https://github.com/ukgovdatascience/rap_companion/blob/master/CONTRIBUTING.md" class="govuk-link">demonstrate for this book</a>.
+</p>
     </main>
   </div>
 
