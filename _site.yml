@@ -19,3 +19,4 @@ output:
     phase: alpha
     feedback_url: "https://github.com/ukgovdatascience/rap-website/issues"
     favicon: "custom"
+    google_analytics: "UA-45097885-12"
