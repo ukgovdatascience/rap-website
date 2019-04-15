@@ -1,0 +1,34 @@
+::: {.breadcrumbs}
+* [Resources](resources.html)
+* Coffee and coding
+:::
+
+# Coffee and coding
+
+The aim of the Coffee & Coding meetups is to nurture, enable and encourage a
+vibrant, supportive and inclusive coding community at an organisation. Coffee &
+Coding provides a regular opportunity for people within an organisation who are
+interested in coding to share skills and knowledge, provide advice and guidance
+to each other and generally network and get to know each other.
+
+A common format is 40 minutes for a presentation and questions to the
+presenter/s followed by 20 minutes Code Surgery. The presentations usually take
+the form of a demonstration of a tool or technique and/or a show and tell of
+work done within the department using these methods.  The Code Surgery provides
+the opportunity for people to pose any coding related queries/ruminations/ideas
+to the gathered coding community.
+
+Some sessions are live-streamed and recorded.  Contact presenters or organisers
+for material (videos, slides, notes) that isn't publicly available -- it might
+be possible for them to share it with you directly.
+
+Offers to present sessions in other deparments are often gratefully accepted.
+
+Table: Coffee and coding groups
+
+| Organisation	                                     | Resources                                                    | Contact	                         | Notes
+|----------------------------------------------------|--------------------------------------------------------------|----------------------------------|---
+| Ministry of Justice (MoJ)	                         | https://github.com/moj-analytical-services/Coffee-and-Coding |	Coffee-and-Coding@justice.gov.uk | Only members of the GitHub moj-analytical-services organisation can access the GitHub repository. The coffee and coding team doesn't have the ability to add anyone to the organisation.
+| Department for Education                           |                                                              |                                  |
+| Department for Transport	                         | https://github.com/departmentfortransport/coffee-and-coding  |                                  |
+| Office for National Statistics Data Science Campus | https://github.com/datasciencecampus/coffee-and-coding       |                                  |
