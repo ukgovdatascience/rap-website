@@ -26,9 +26,10 @@ Offers to present sessions in other deparments are often gratefully accepted.
 
 Table: Coffee and coding groups
 
-| Organisation	                                     | Resources                                                    | Contact	                         | Notes
-|----------------------------------------------------|--------------------------------------------------------------|----------------------------------|---
-| Ministry of Justice (MoJ)	                         | https://github.com/moj-analytical-services/Coffee-and-Coding |	Coffee-and-Coding@justice.gov.uk | Only members of the GitHub moj-analytical-services organisation can access the GitHub repository. The coffee and coding team doesn't have the ability to add anyone to the organisation.
-| Department for Education                           |                                                              |                                  |
-| Department for Transport	                         | https://github.com/departmentfortransport/coffee-and-coding  |                                  |
-| Office for National Statistics Data Science Campus | https://github.com/datasciencecampus/coffee-and-coding       |                                  |
+| Organisation | Resources | Contact | Notes |
+|--------------|-----------|---------|-------|
+| Department for Business, Energy and Industrial Strategy |  |  |  |
+| Ministry of Justice (MoJ) | https://github.com/moj-analytical-services/Coffee-and-Coding | Coffee-and-Coding@justice.gov.uk | Only members of the GitHub moj-analytical-services organisation can access the GitHub repository. The coffee and coding team doesn’t have the ability to add anyone to the organisation. |
+| Department for Education |  |  |  |
+| Department for Transport | https://github.com/departmentfortransport/coffee-and-coding |  |  |
+| Office for National Statistics Data Science Campus | https://github.com/datasciencecampus/coffee-and-coding |  |  |
