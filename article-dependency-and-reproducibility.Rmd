@@ -5,7 +5,7 @@
 
 # Dependency and reproducibility
 
-_This section is in development. Please [contribute to the discussion](https://github.com/ukgovdatascience/rap_companion/issues/89)._
+*Discuss this page on [GitHub](https://github.com/ukgovdatascience/rap-website/issues/6).*
 
 ## Other people's code
 
