@@ -9,7 +9,7 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 ## Technical articles
 
 ::: {.unbulleted-list}
-* [Dependency and reproducibility](./article-dependency-and-reproducibility.Rmd.html)
+* [Dependency and reproducibility](./article-dependency-and-reproducibility.html)
 * [Infrastructure for RAP](./article-infrastructure.html)
 :::
 
