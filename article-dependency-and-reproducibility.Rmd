@@ -1,5 +1,5 @@
 ::: {.breadcrumbs}
-* [Companion](companion-index.html)
+* [Articles](articles.html)
 * Dependency and reproducibility
 :::
 
