@@ -5,6 +5,9 @@
 
 # Infrastructure for RAP
 
+*Discuss this page on
+[GitHub](https://github.com/ukgovdatascience/rap-website/issues/5)*
+
 RAP requires one or more programming languages, and a version control system.
 There are no other requirements.
 
