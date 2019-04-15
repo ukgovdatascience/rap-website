@@ -1,3 +1,8 @@
+::: {.breadcrumbs}
+* [Resources](resources.html)
+* NHS toolkit
+:::
+
 # NHS NSS Transforming Publications Toolkit
 
 The NHS NSS Transforming Publishing team has created a toolkit of templates,

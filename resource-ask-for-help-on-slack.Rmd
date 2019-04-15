@@ -1,3 +1,8 @@
+::: {.breadcrumbs}
+* [Resources](resources.html)
+* Ask for help
+:::
+
 # Ask for help on Slack
 
 The [govdatascience Slack](https://govdatascience.slack.com) is a friendly place to ask

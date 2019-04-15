@@ -1,3 +1,8 @@
+::: {.breadcrumbs}
+* [Articles](articles.html)
+* GOV.UK amendments
+:::
+
 # Amendments to GOV.UK statistics publications
 
 An exploratory data analysis to inform Reproducible Analytical Pipelines, by
