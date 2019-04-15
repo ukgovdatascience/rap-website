@@ -30,7 +30,6 @@ components from the GOV.UK Design System.
 1. [Unit testing](rap-companion-08-unit-testing.html)
 1. [Automated testing](rap-companion-09-automated-testing.html)
 1. [Code coverage](rap-companion-10-code-coverage.html)
-1. [Dependency and reproducibility](rap-companion-11-dependency-and-reproducibility.html)
 1. [Quality assurance](rap-companion-12-quality-assurance.html)
 1. [Publishing](rap-companion-13-publishing.html)
 1. [Final thoughts](rap-companion-14-final-thoughts.html)
