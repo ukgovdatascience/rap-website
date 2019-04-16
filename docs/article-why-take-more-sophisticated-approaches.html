@@ -3956,13 +3956,12 @@ color: #d14;
                   <!-- link name -->
                   Home
                 </a>
-              </li>            <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+              </li>            <li class="govuk-header__navigation-item">
                 <a class="govuk-header__link" href="companion-index.html">
                   <!-- link name -->
                   Companion
                 </a>
-              </li>
-              <li class="govuk-header__navigation-item">
+              </li>            <li class="govuk-header__navigation-item">
                 <a class="govuk-header__link" href="articles.html">
                   <!-- link name -->
                   Articles
@@ -4008,71 +4007,160 @@ color: #d14;
             <div class="govuk-breadcrumbs">
 <ol class="govuk-breadcrumbs__list">
 <li class="govuk-breadcrumbs__list-item">
-<a href="index.html" class="govuk-breadcrumbs__link govuk-link">home</a>
+<a href="articles.html" class="govuk-breadcrumbs__link govuk-link">Articles</a>
 </li>
 <li class="govuk-breadcrumbs__list-item">
-Companion
+Why take a more sophisticated approach to building your pipeline
 </li>
 </ol>
 </div>
-<h1 id="rap-companion-and-course" class="govuk-heading-xl">RAP Companion and Course</h1>
+<h1 id="why-take-a-more-sophisticated-approach-to-building-your-pipeline" class="govuk-heading-xl">Why take a more sophisticated approach to building your pipeline?</h1>
 <p class="govuk-body">
-The RAP Companion is an online book about RAP. The <a href="https://ukgovdatascience.github.io/rap_companion/" class="govuk-link">original book</a> was written by Matt Upson and Matt Gregory in 2017 and has been updated since with contributions by other people.
+There are lots of different approaches and levels of sophistication to producing reproducible pipelines and analysis in government. This article aims to address confusion around how and why a more sophisticated approach might be taken.
 </p>
 <p class="govuk-body">
-<a href="https://www.udemy.com/reproducible-analytical-pipelines" class="govuk-link">Reproducible Analytical Pipelines (RAP) using R</a> is a free online course that draws on the RAP Companion, with examples and exercises in the R programming language.
+The word ‘pipeline’ is used to mean all data processing and analysis pipelines.
+</p>
+<h2 id="automation" class="govuk-heading-l">Automation</h2>
+<p class="govuk-body">
+Automation is achieved by codifying pipelines. This can be done with legacy tools such as SPSS, VBA, SAS, or modern tools such as Python and R.
+</p>
+<h3 id="benefits" class="govuk-heading-m">Benefits</h3>
+<ol class="govuk-list govuk-list--number">
+<li class="govuk-body">
+<p class="govuk-body">
+Automation removes the possibility of errors and mistakes that can be introduced by manual processes, for example copy and paste errors.
+</p>
+</li>
+<li class="govuk-body">
+<p class="govuk-body">
+Automation can increase efficiency by removing the need for time consuming manual data processing, for example in Excel, or point and click functionality of tools like SPSS. This efficiency is especially important in cases where the data processing might need to be run multiple times. For example, the underlying data changes, or a mistake was found during quality assurance of the outputs. The entire process might need to be repeated, and this could happen multiple times. Automation means that time spent rerunning the pipeline is trivial.
+</p>
+</li>
+<li class="govuk-body">
+<p class="govuk-body">
+Improves transparency and trust. If the data process is codified, reading the data directly from it’s source, and no data is ‘hard-coded’, then it is clear exactly how the data has been processed. Also the code can then often be shared as open source code, without disclosing any sensitive information in the underlying data. Whereas for example, a pipeline comprising of excel files usually cannot be shared as easily.
 </p>
 <p class="govuk-body">
-The articles linked below are copies of the original RAP Companion. Some users might find these versions more accessible because this website uses accessible components from the GOV.UK Design System.
+For example, for a statistical publication, all underlying data can be stored in a CSV file(s). The automaton code reads the data directly from this CSV to populate all figures in the publication: summary tables, figures interspersed in text, self serve data tools, etc. This approach builds trust as the CSV is a single source of truth, the exact steps taken do process the data are shared, and eliminates any ‘copy and pasting’ errors.
+</p>
+</li>
+<li class="govuk-body">
+<p class="govuk-body">
+It is also a necessary precursor to the below approaches for reproducibility and consistency.
+</p>
+</li>
+</ol>
+<h3 id="comparison-of-tools" class="govuk-heading-m">Comparison of tools</h3>
+<p class="govuk-body">
+Whilst legacy tools are all mostly capable of reading and processing data, they have limitations.
+</p>
+<p class="govuk-body">
+Modern tools have better support for:
 </p>
 <ol class="govuk-list govuk-list--number">
 <li class="govuk-body">
-<a href="rap-companion-00-preface.html" class="govuk-link">Preface</a>
+<p class="govuk-body">
+Reading a diverse range of data formats.
+</p>
 </li>
 <li class="govuk-body">
-<a href="rap-companion-01-introduction.html" class="govuk-link">Introduction</a>
+<p class="govuk-body">
+Modularising code. When automating, it is best practice to modularise code to simplify it, make it more easily reusable, less fragile and prone to errors, easier to maintain, and quicker to debug. Essentially, writing code as well thought out piece of software, using best practices, rather than one long script or a collection of scripts. Modern tools like Python have much better support for modularising code and writing clean, reliable software.
+</p>
 </li>
 <li class="govuk-body">
-<a href="rap-companion-02-ethics.html" class="govuk-link">Ethics</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-03-why.html" class="govuk-link">Why</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-04-exemplar.html" class="govuk-link">Exemplar</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-05-open-source.html" class="govuk-link">Open source</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-06-version-control.html" class="govuk-link">Version control</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-07-packaging-code.html" class="govuk-link">Package code</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-08-unit-testing.html" class="govuk-link">Unit testing</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-09-automated-testing.html" class="govuk-link">Automated testing</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-10-code-coverage.html" class="govuk-link">Code coverage</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-12-quality-assurance.html" class="govuk-link">Quality assurance</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-13-publishing.html" class="govuk-link">Publishing</a>
-</li>
-<li class="govuk-body">
-<a href="rap-companion-14-final-thoughts.html" class="govuk-link">Final thoughts</a>
+<p class="govuk-body">
+Creating outputs. Modern tools have much better support for producing outputs such as charts, web pages, formatted spreadsheets, etc. Tools like SAS and SPSS have limited functionality which means part of the pipeline might still need to be performed in Excel, so can’t be fully automated.
+</p>
 </li>
 </ol>
-<h2 id="future-of-the-rap-companion" class="govuk-heading-l">Future of the RAP Companion</h2>
+<h2 id="reproducibility" class="govuk-heading-l">Reproducibility</h2>
 <p class="govuk-body">
-The RAP Companion will not be extensively updated. New <a href="articles.html" class="govuk-link">articles</a> can be written and published on this website instead. The reason not to update the RAP Companion is because that would require the <a href="https://www.udemy.com/reproducible-analytical-pipelines" class="govuk-link">online course videos</a> to be updated too, which would be difficult to do collaboratively. Rather than allow the Companion to diverge from the course videos, the Companion will be preserved, and new and revised material will be published on this website.
+Reproducibility is about ensuring any particular run of a pipeline can be reproduced. If the pipeline has been automated, then the same person running the same code on the same machine might be able to rerun the pipeline to produce the same results. However, we often also want anybody (with access to the source data), using any machine, to be able to exactly reproduce the results and outputs. For example, this allows analysis to be peer reviewed by anyone which access to the source data. Even for non-public analysis this is important, to ensure that results can be audited and verified internally. This requires a few things:
 </p>
+<ol class="govuk-list govuk-list--number">
+<li class="govuk-body">
+<p class="govuk-body">
+The same version of the code is used. The best way to do this is to version control your code with Git. This means the version of your code used for the run in question can be locked and recorded as a snapshot (commit), and the code can be easily shared with others via services like GitHub. Simply saving scripts as v1, v2 etc. is not sufficient. There is no way to guarantee or check that any changes to v1 haven’t been made since it was last run.
+</p>
+</li>
+<li class="govuk-body">
+<p class="govuk-body">
+The same version of the software and it’s dependencies are used. If the code is rerun at a later date, the user may have installed a more recent version of the software. With legacy tools this is generally not a problem as they function as standalone software without dependencies on other software. Open source tools like R and Python have different dependencies to run on different machines, and make use of user written packages. R has some limited tools to help with this, Python has mature, reliable tools which solve this.
+</p>
+</li>
+<li class="govuk-body">
+<p class="govuk-body">
+The code itself is designed to run on multiple operating systems. For example, Windows uses backslash in paths whereas Unix based operating systems like OS X use forward slash.
+</p>
+</li>
+<li class="govuk-body">
+<p class="govuk-body">
+The code is written to run directly from source data that other users will also have access to. Ensuring all parties are using the same data as a single source of truth and cleaning the data in the same way from the same point.
+</p>
+</li>
+<li class="govuk-body">
+<p class="govuk-body">
+Ensuring they are sufficient and accurate instructions to run the pipeline. It is not completely necessary, but ideally software is designed in a way that to use it is intuitive and requires minimal documentation, this forces developers to consider the usability of their code and not rely on increasingly complex written instructions. The documentation that there is, is stored in with code in either a README.md or docs files. Useful information can be stored in comments in the code but critical information should be made as readily available to the user as possible, ideally in the README or, docs with signposting from the README. It is better to store instructions as part of the project as it is better for ensuring the instructions are maintained, updated, and distributed along with the code. If instructions are not tied to the process and tools and stored separately as a standalone document, then as code gets updated to new versions, the instructions become inaccurate and potentially unusable.
+</p>
+<p class="govuk-body">
+For example, users can check commits to see when docs were last updated. Instructions stored in shared drives have no version control, and require the user to know where they are saved, and have access to the shared drive.
+</p>
+</li>
+</ol>
+<h2 id="consistency" class="govuk-heading-l">Consistency</h2>
+<p class="govuk-body">
+Consistency is about separating code for a pipeline into aspects that might be updated for each run of a pipeline, from aspects that we want to remain constant for every run of a pipeline. For an ad hoc piece of analysis, it might be sufficient to write analysis code from scratch. For repeated analysis, for example something like a statistical publication, it is important to ensure that the results in each publication are consistent where expected. This means using the same functions for analysis and cleaning, package versions, etc., between analysis. The best way to achieve this is to store functions that do the data cleaning and analysis separately, for example in an R or Python package, and then for each publication separate code is written for the unique aspects of that publication, for example paths to data sources, presentation of results, accompanying text, etc., but using version controlled packages for the cleaning and analysis parts ensures consistency across publications.
+</p>
+<p class="govuk-body">
+There are times that the package code will need to be added to. In this case it is important to have tests written to ensure it still produces the same results for all the previous publications it was used for. In the case where the package code needs to be updated and is expected to produce different results, the version number is incremented, so that users (and tests) know which version to use to reproduce which publications.
+</p>
+<p class="govuk-body">
+There are also other aspects for which it is important to have consistency. For example the format of outputted data. For excel files in statistical publications, it does not cause major problems if number formats, column headings, end up getting changed over time and therefore are changing unpredictably. But if the output data is to be integrated into another project it could be essential for the format to remain consistent, in which case this code should also be included in the package code and tests written.
+</p>
+<p class="govuk-body">
+Python has good support for storing reusable code in a package and using the desired version of the package. R also supports packages, but they are more complicated to develop, and R does not have as good support for using previous versions.
+</p>
+<h2 id="openness" class="govuk-heading-l">Openness</h2>
+<p class="govuk-body">
+Openness is important for transparency, to build trust, allow external QA and collaboration. One approach would be to share data analysis code in a public GitHub repository which is linked to from the publication.
+</p>
+<h2 id="integration" class="govuk-heading-l">Integration</h2>
+<p class="govuk-body">
+If we have automated our pipeline, and made it reproducible, consistent, and open, written in a well supported language like Python, we will be in a good position integrating our code into other systems, for example:
+</p>
+<ol class="govuk-list govuk-list--number">
+<li class="govuk-body">
+<p class="govuk-body">
+Scheduling and automating runs on a cloud platform.
+</p>
+</li>
+<li class="govuk-body">
+<p class="govuk-body">
+Using functions from your package in other applications, for example a data tool web application.
+</p>
+</li>
+</ol>
+<h2 id="source-data" class="govuk-heading-l">Source data</h2>
+<p class="govuk-body">
+Even if the most sophisticated approach is taken, if the raw data is not stored in a sufficient way, and the raw data cannot be readily accessed, the pipeline fails at the first hurdle. For example, data could be stored in excel files or CSVs that be inadvertently might be moved or renamed, which will break file paths pointing to the data. Or security and access to the data is poorly managed.
+</p>
+<p class="govuk-body">
+Some examples of sensible approaches:
+</p>
+<ol class="govuk-list govuk-list--number">
+<li class="govuk-body">
+<p class="govuk-body">
+Read data straight from a database or API.
+</p>
+</li>
+<li class="govuk-body">
+<p class="govuk-body">
+If using excel files or CSV, store them somewhere that that is easily accessible and users do not have write access, for example a cloud bucket.
+</p>
+</li>
+</ol>
     </main>
   </div>
 
