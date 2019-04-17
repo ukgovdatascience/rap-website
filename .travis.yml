@@ -2,19 +2,11 @@ language: r
 
 # cache packages so that each build doesn't require installation...
 cache:
-  directories:
-    - $TRAVIS_BUILD_DIR/packrat/src
-    - $TRAVIS_BUILD_DIR/packrat/lib
   packages: true
 
 # Decrypt the deployment key, used to push the result to the repo
 before_install:
  - openssl aes-256-cbc -K $encrypted_516b420c1ae6_key -iv $encrypted_516b420c1ae6_iv -in deploy_key.enc -out deploy_key -d
-
-# Use packrat to setup dependencies
-install:
-  - R -e "0" --args --bootstrap-packrat
-  - R -e "packrat::restore(restart = FALSE)"
 
 # Make bash scripts executable, so they can be run later. 
 before_script:
