@@ -5,16 +5,17 @@
 
 # Travis CI deployment
 
-It can be handy to have code run when commits are pushed to GitHub - you can do lots of things with this, but commonly it is used to run unit tests, build a docker images, or deploy something. In this example we will deploy this website to github pages using Travis-CI (which is free for open repositories).
+It can be handy to have code run when commits are pushed to GitHub - you can do lots of things with this, but commonly it is used to run unit tests, build a docker image, or deploy something. In this example we will deploy this website to github pages using Travis-CI (which is free for open repositories).
 
 ## Step by step
 
-I'm not going to cover using the Travis GUI and enabling Travis for your Github account here - if you visit the website it should guide you through the step to turn it on for a repository. It is worth noting that https://travis-ci.org/ if for open repositories, the paid version is available at `.com`.  The rest of this guide assumes that you've activated Travis for your personal account or organisation.
+Enable Travis for your Github account via the website https://travis-ci.org/. It will guide you through the process of activating a repository. For private repositories you will have to pay money and use the website https://travis-ci.com/.  The rest of this guide assumes that you have activated Travis for your personal account or organisation.
 
 ### 1. Choose a language
 
-Travis will run based on instructions stored in a `.travis.yml` file. See [their docs](https://docs.travis-ci.com/user/languages/r/) for more info. We specify that we're using `R` and that we want to cache packages.
- > Caching the packages will speed up the build as install times on Linux (which Travis uses) are very slow (reduction from 30mins to 3 mins for this build).
+Travis will run based on instructions stored in a `.travis.yml` file. See [their documentation](https://docs.travis-ci.com/user/languages/r/) for more information. We specify that we are using `R` and that we want to cache packages.
+
+> 'Caching' will speed up the build considerably, by reusing compiled dependencies from one build in subsequent builds.  Travis has to compile packages because pre-compiled 'binary' packages are not available for the Linux operating system, which is what Travis runs on.  A recent website was built 10 times faster by using caching (3 minutes rather than 30 minutes).
 
 ```yml
 language: r
@@ -27,7 +28,7 @@ cache:
 
 ### 2. Generate an SSH key
 
-Each time we push or pull from GitHub we're goign to use a ssh key generated just for this repo. Don't use your personal ssh key. To do so, use the command below, and make a note of where you save the key. 
+Each time we push or pull from GitHub we will use an ssh key generated just for this repo. Don't use your personal ssh key. To create a new key, use the command below, and make a note of where you save the key. 
 
 ```sh
 ssh-keygen -t rsa -b 4096 -C "will@bowdit.ch"
@@ -37,46 +38,47 @@ ssh-keygen -t rsa -b 4096 -C "will@bowdit.ch"
 
 ### 3. Encrypt the key
 
-We don't want to store the key in the repo, so we use travis to encrypt it (you'll need to install the `travis` command line tool).  This command is going to give us a command to add to our `.travis.yml` file. You can do this automatically by adding `--add`.
+We don't want people to be able to read the key, so we use travis to encrypt it (you'll need to install the `travis` command line tool).  The command `travis encrypt-file deploy_key` adds a line to the `.travis.yml` file that tells Travis to use the encrypted key.  If you run the command `travis encrypt-file deploy_key --add` then you can skip step 4.
 
 ```sh
 travis encrypt-file deploy_key
->encrypting deploy_key for ukgovdatascience/rap-website
->storing result as deploy_key.enc
->DANGER ZONE: Override existing deploy_key.enc? |no| yes
->storing secure env variables for decryption
->Please add the following to your build script(before_install stage in your >.travis.yml, for instance):
+> encrypting deploy_key for ukgovdatascience/rap-website
+> storing result as deploy_key.enc
+> DANGER ZONE: Override existing deploy_key.enc? |no| yes
+> storing secure env variables for decryption
+> Please add the following to your build script(before_install stage in your >.travis.yml, for instance):
 >    openssl aes-256-cbc -K $encrypted_516b420c1ae6_key-iv $encrypted_516b420c1ae6_iv -in deploy_key.enc-out deploy_key -d
->Pro Tip: You can add it automatically by running with--add.
->Make sure to add deploy_key.enc to the git repository.
->Make sure not to add deploy_key to the git repository.
->Commit all changes to your .travis.yml.
+> Pro Tip: You can add it automatically by running with --add.
+> Make sure to add deploy_key.enc to the git repository.
+> Make sure not to add deploy_key to the git repository.
+> Commit all changes to your .travis.yml.
 ```
-> Note I called the key generated earlier `deploy_key` and stored it in the repo. We dont want to commit this to the repository so best to add it to .gitignore or deleted it (you can always generate another one).
 
+> If you store unencrypted key `deploy_key` in the repo folder, then name it in `.gitignore` to avoid accidentally publishing it on GitHub.  It doesn't matter if you lose the key because you can create a new one.
 
 ### 4. Tell Travis to decrypt the key
 
-We need to add the `openssl` command to the `.travis.yml` file. This command is going to use two environment variables stored by travis to decrypt the ssh key.
+If you ran the command `travis encrypt-file deploy_key --add` in the previous step (note the `--add`) then you can skip this step.  If you ran the command `travis encrypt-file deploy_key` then it it will have shown you an `openssl` command.  Add this command to the `.travis.yml` file. This command is uses two environment variables stored by travis to decrypt the ssh key.
+
 ```yml
-# Decrypt the deployment key, used to push the result to the  repo
+# Decrypt the deployment key, used to push the result to the repo
 before_install:
     - openssl aes-256-cbc -K $encrypted_516b420c1ae6_key-iv    $encrypted_516b420c1ae6_iv -in deploy_key.enc-out deploy_key -d
 ```
 
 ### 5. Add the key to GitHub
 
-Next we want to add the ssh key to the repository as a deployment key. You can find on GitHub by navigating to the `Repo > Settings > Deploy keys > Add deploy key`. There, paste in the public key you generated earlier.
+Add the ssh key to the repository as a deployment key. Find the place to put it on GitHub by navigating to `Repo > Settings > Deploy keys > Add deploy key`. There, paste in the contents of the `deploy_key` file you generated earlier.
 
-> on OS X you can use`cat deploy_key.pub | pbcopy` 
+> on OS X you can use`cat deploy_key.pub | pbcopy` to copy the key to the clipboard.
 
-Make sure you tick **allow write access** if you want the key to have permission to push to the repo, by default deploy keys are read only.
+Tick **allow write access** if you want the key to have permission to push to the repo.  This is the case if you are using Travis to render a website and publish it in a `/docs` folder or `gh-pages` branch.
  
-### 6. Now for the task
+### 6. Tell Travis what to do
 
-Finally, we are going to tell travis what scripts to run on each commit. To allow them to run they need to be made executable with `chmod +x`. What's in these scripts is arbitrary, but here we're going to build the book using rmarkdown and push it to a branch on github, only when it's on the master branch.
+Tell Travis what scripts to run on each commit. To allow them to run they need to be made executable with the command `chmod +x`. The scripts can do anything.  In this exampl the scripts tell Travis to build a website using rmarkdown and push it to the `gh-pages` branch on github.  GitHub will then publish the website.
 
->Travis has a number of environment variables we can use to make scripts run only on pull requests or when on certain branches (see: https://docs.travis-ci.com/user/environment-variables/). Below we are only going to run the deploy script if it isn't a pull request and we're on the master branch. You can either put this in the yml or in the bash scripts (see `_deploy.sh`). 
+> Travis has several environment variables to control whether scripts run only on pull requests or on certain branches (see: https://docs.travis-ci.com/user/environment-variables/). Below we are only going to run the deploy script if it isn't a pull request and is on the master branch. Put this either in the `.travis.yml` file or in the bash scripts (see the file `_deploy.sh`). 
 
 ```yml
 # Make bash scripts executable, so they can be run later. 
