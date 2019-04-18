@@ -1,0 +1,18 @@
+Package: placeholder
+Type: Book
+Title: Does not matter.
+Version: 0.0.1
+Imports: rmarkdown,
+  DT,
+  here,
+  tidyverse,
+  devtools,
+  ebbr,
+  patchwork,
+  eesectors,
+  govdown
+Remotes: dgrtwo/ebbr,
+  thomasp85/patchwork,
+  DCMSstats/eesectors,
+  ukgovdatascience/govdown
+

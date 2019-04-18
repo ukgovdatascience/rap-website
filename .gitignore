@@ -1,0 +1,7 @@
+deploy_key
+packrat/lib*/
+
+# Dont put local caches or builds into git
+site/*_cache/
+site/*_files/
+site/docs/
