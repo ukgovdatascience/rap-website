@@ -58,7 +58,7 @@ travis encrypt-file deploy_key
 
 ### 4. Tell Travis to decrypt the key
 
-If you ran the command `travis encrypt-file deploy_key --add` in the previous step (note the `--add`) then you can skip this step.  If you ran the command `travis encrypt-file deploy_key` then it it will have shown you an `openssl` command.  Add this command to the `.travis.yml` file. This command is uses two environment variables stored by travis to decrypt the ssh key.
+If you ran the command `travis encrypt-file deploy_key --add` in the previous step (note the `--add`) then you can skip this step.  If you ran the command `travis encrypt-file deploy_key` then it it will have shown you an `openssl` command.  Add this command to the `.travis.yml` file. This command uses two environment variables stored by travis to decrypt the ssh key.
 
 ```yml
 # Decrypt the deployment key, used to push the result to the repo
@@ -76,7 +76,7 @@ Tick **allow write access** if you want the key to have permission to push to th
  
 ### 6. Tell Travis what to do
 
-Tell Travis what scripts to run on each commit. To allow them to run they need to be made executable with the command `chmod +x`. The scripts can do anything.  In this exampl the scripts tell Travis to build a website using rmarkdown and push it to the `gh-pages` branch on github.  GitHub will then publish the website.
+Tell Travis what scripts to run on each commit. To allow them to run they need to be made executable with the command `chmod +x`. The scripts can do anything.  In this example the scripts tell Travis to build a website using rmarkdown and push it to the `gh-pages` branch on github.  GitHub will then publish the website.
 
 > Travis has several environment variables to control whether scripts run only on pull requests or on certain branches (see: https://docs.travis-ci.com/user/environment-variables/). Below we are only going to run the deploy script if it isn't a pull request and is on the master branch. Put this either in the `.travis.yml` file or in the bash scripts (see the file `_deploy.sh`). 
 
