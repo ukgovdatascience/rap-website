@@ -12,6 +12,7 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 * [How to ask for help on Slack](resource-ask-for-help-on-slack.html)
 * [Learn at Coffee and Coding sessions](resource-coffee-and-coding.html)
 * [NHS NSS Transforming Publications Toolkit](resource-nhs-nss-transforming-publications-toolkit.html)
+* [CI with Travis](resources-deployment-ci-with-travis.html)
 :::
 
 
