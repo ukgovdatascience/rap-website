@@ -12,6 +12,7 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 * [Dependency and reproducibility](./article-dependency-and-reproducibility.html)
 * [Infrastructure for RAP](./article-infrastructure.html)
 * [Why take a more sophisticated approach to building your pipeline?](./article-why-take-more-sophisticated-approaches.html)
+* [Continuous Integration with Travis](article-deployment-ci-with-travis.html)
 :::
 
 ## Blog posts
