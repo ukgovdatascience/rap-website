@@ -1,5 +1,5 @@
 :::{.breadcrumbs}
-* [home](index.html)
+* [Home](index.html)
 * Companion
 :::
 
