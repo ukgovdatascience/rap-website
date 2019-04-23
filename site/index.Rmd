@@ -30,8 +30,9 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 The website is built using the R package
 [govdown](https://ukgovdatascience.github.io/govdown/).  It supports code
 written in R, Python. and can support other languages that the knitr package
-supports, as long as someone is able to run the code to build the website.  In
-future this website might be built by [Travis](https://travis-ci.org/).
+supports, as long as
+[Travis](https://travis-ci.org/ukgovdatascience/rap-website) is able to run the
+code to build the website.
 
 ## Attribution
 
