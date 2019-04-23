@@ -1,0 +1,140 @@
+::: {.breadcrumbs}
+* [Resources](resources.html)
+* Travis Deployment 
+:::
+
+# Travis CI deployment
+
+It can be handy to have code run when commits are pushed to GitHub - you can do lots of things with this, but commonly it is used to run unit tests, build a docker image, or deploy something. In this example we will deploy this website to github pages using Travis-CI (which is free for open repositories).
+
+## Step by step
+
+Enable Travis for your Github account via the website https://travis-ci.org/. It will guide you through the process of activating a repository. For private repositories you will have to pay money and use the website https://travis-ci.com/.  The rest of this guide assumes that you have activated Travis for your personal account or organisation.
+
+### 1. Choose a language
+
+Travis will run based on instructions stored in a `.travis.yml` file. See [their documentation](https://docs.travis-ci.com/user/languages/r/) for more information. We specify that we are using `R` and that we want to cache packages.
+
+> 'Caching' will speed up the build considerably, by reusing compiled dependencies from one build in subsequent builds.  Travis has to compile packages because pre-compiled 'binary' packages are not available for the Linux operating system, which is what Travis runs on.  A recent website was built 10 times faster by using caching (3 minutes rather than 30 minutes).
+
+```yml
+language: r
+
+# cache packages so that each build doesn't require installation...
+cache:
+    packages: true
+# Install packages we need
+```
+
+### 2. Generate an SSH key
+
+Each time we push or pull from GitHub we will use an ssh key generated just for this repo. Don't use your personal ssh key. To create a new key, use the command below, and make a note of where you save the key. 
+
+```sh
+ssh-keygen -t rsa -b 4096 -C "will@bowdit.ch"
+>Generating public/private rsa key pair.
+>Enter file in which to save the key (/Users/will.bowditch/.ssh/id_rsa): />Users/will.bowditch/projects/rap-website/deploy_key
+```
+
+### 3. Encrypt the key
+
+We don't want people to be able to read the key, so we use travis to encrypt it (you'll need to install the `travis` command line tool).  The command `travis encrypt-file deploy_key` adds a line to the `.travis.yml` file that tells Travis to use the encrypted key.  If you run the command `travis encrypt-file deploy_key --add` then you can skip step 4.
+
+```sh
+travis encrypt-file deploy_key
+> encrypting deploy_key for ukgovdatascience/rap-website
+> storing result as deploy_key.enc
+> DANGER ZONE: Override existing deploy_key.enc? |no| yes
+> storing secure env variables for decryption
+> Please add the following to your build script(before_install stage in your >.travis.yml, for instance):
+>    openssl aes-256-cbc -K $encrypted_516b420c1ae6_key-iv $encrypted_516b420c1ae6_iv -in deploy_key.enc-out deploy_key -d
+> Pro Tip: You can add it automatically by running with --add.
+> Make sure to add deploy_key.enc to the git repository.
+> Make sure not to add deploy_key to the git repository.
+> Commit all changes to your .travis.yml.
+```
+
+> If you store unencrypted key `deploy_key` in the repo folder, then name it in `.gitignore` to avoid accidentally publishing it on GitHub.  It doesn't matter if you lose the key because you can create a new one.
+
+### 4. Tell Travis to decrypt the key
+
+If you ran the command `travis encrypt-file deploy_key --add` in the previous step (note the `--add`) then you can skip this step.  If you ran the command `travis encrypt-file deploy_key` then it it will have shown you an `openssl` command.  Add this command to the `.travis.yml` file. This command uses two environment variables stored by travis to decrypt the ssh key.
+
+```yml
+# Decrypt the deployment key, used to push the result to the repo
+before_install:
+    - openssl aes-256-cbc -K $encrypted_516b420c1ae6_key-iv    $encrypted_516b420c1ae6_iv -in deploy_key.enc-out deploy_key -d
+```
+
+### 5. Add the key to GitHub
+
+Add the ssh key to the repository as a deployment key. Find the place to put it on GitHub by navigating to `Repo > Settings > Deploy keys > Add deploy key`. There, paste in the contents of the `deploy_key` file you generated earlier.
+
+> on OS X you can use`cat deploy_key.pub | pbcopy` to copy the key to the clipboard.
+
+Tick **allow write access** if you want the key to have permission to push to the repo.  This is the case if you are using Travis to render a website and publish it in a `/docs` folder or `gh-pages` branch.
+ 
+### 6. Tell Travis what to do
+
+Tell Travis what scripts to run on each commit. To allow them to run they need to be made executable with the command `chmod +x`. The scripts can do anything.  In this example the scripts tell Travis to build a website using rmarkdown and push it to the `gh-pages` branch on github.  GitHub will then publish the website.
+
+> Travis has several environment variables to control whether scripts run only on pull requests or on certain branches (see: https://docs.travis-ci.com/user/environment-variables/). Below we are only going to run the deploy script if it isn't a pull request and is on the master branch. Put this either in the `.travis.yml` file or in the bash scripts (see the file `_deploy.sh`). 
+
+```yml
+# Make bash scripts executable, so they can be run later. 
+before_script:
+- chmod +x ./_build.sh
+- chmod +x ./_deploy.sh
+
+script:
+- "./_build.sh"
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./_deploy.sh; else echo "PR so
+not deploying"; fi
+```
+
+## Example Scripts
+
+`_build.sh`:
+```sh
+#!/bin/bash
+
+# Build the site in `/site`
+Rscript -e "rmarkdown::render_site(input='site')"
+```
+
+`_deploy.sh`:
+```sh
+#!/bin/bash
+
+# Start ssh agent and add key
+eval "$(ssh-agent -s)" # Start the ssh agent
+chmod 600 deploy_key
+ssh-add deploy_key
+
+
+# Only publish to gh-pages if on the master branch
+if [[ $TRAVIS_BRANCH == 'master' ]]
+then
+  # configure your name and email if you have not done so
+  git config --global user.email "your@email.com"
+  git config --global user.name "your_github_username"
+
+  # clone the repository to the book-output directory
+  git clone -b gh-pages \
+    git@github.com:ukgovdatascience/rap-website.git \
+    book-output
+
+  cd book-output
+  
+  # Remove everything from this branch.
+  git rm -rf *
+  
+  # Copy the new site, add all, and commit!
+  cp -r ../site/docs/* ./
+  git add --all *
+  git commit -m "Travis built book"
+  git push -q origin gh-pages
+else
+  echo "Not publishing as not in MASTER branch"
+fi
+```
