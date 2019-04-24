@@ -34,3 +34,4 @@ Table: Coffee and coding groups
 | Department for Transport | https://github.com/departmentfortransport/coffee-and-coding |  |  |
 | Office for National Statistics Data Science Campus | https://github.com/datasciencecampus/coffee-and-coding |  |  |
 | Department of Health and Social Care | | https://www.eventbrite.co.uk/e/health-r-coding-club-tickets-52481515626 | All events are arranged via the eventbrite link. |
+| Ministry of Defence | Internal GitLab | Charlie Willis charles.wills106@mod.uk | Usually once a month on Friday mornings |
