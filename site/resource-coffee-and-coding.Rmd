@@ -29,9 +29,9 @@ Table: Coffee and coding groups
 | Organisation | Resources | Contact | Notes |
 |--------------|-----------|---------|-------|
 | Department for Business, Energy and Industrial Strategy | `W:/TRAINSHARE` on CBAS (open only to CBAS users in BEIS and partner orgs) | coffeeandcoding@beis.gov.uk | Weekly at 10-11am on Wednesdays, open to all |
-| Ministry of Justice (MoJ) | https://github.com/moj-analytical-services/Coffee-and-Coding | Coffee-and-Coding@justice.gov.uk | Only members of the GitHub moj-analytical-services organisation can access the GitHub repository. The coffee and coding team doesn’t have the ability to add anyone to the organisation. |
 | Department for Education |  | coffee.coding@education.gov.uk |  |
-| Department for Transport | https://github.com/departmentfortransport/coffee-and-coding |  |  |
-| Office for National Statistics Data Science Campus | https://github.com/datasciencecampus/coffee-and-coding |  |  |
 | Department of Health and Social Care | | https://www.eventbrite.co.uk/e/health-r-coding-club-tickets-52481515626 | All events are arranged via the eventbrite link. |
+| Department for Transport | https://github.com/departmentfortransport/coffee-and-coding |  |  |
 | Ministry of Defence | Internal GitLab | Charlie Willis charles.wills106@mod.uk | Usually once a month on Friday mornings |
+| Ministry of Justice (MoJ) | https://github.com/moj-analytical-services/Coffee-and-Coding | Coffee-and-Coding@justice.gov.uk | Only members of the GitHub moj-analytical-services organisation can access the GitHub repository. The coffee and coding team doesn’t have the ability to add anyone to the organisation. |
+| Office for National Statistics Data Science Campus | https://github.com/datasciencecampus/coffee-and-coding |  |  |
