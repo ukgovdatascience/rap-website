@@ -12,6 +12,7 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 * [How to ask for help on Slack](resource-ask-for-help-on-slack.html)
 * [Learn at Coffee and Coding sessions](resource-coffee-and-coding.html)
 * [NHS NSS Transforming Publications Toolkit](resource-nhs-nss-transforming-publications-toolkit.html)
+* [Use RAP to help conform to the Data Ethics Framework](https://www.gov.uk/guidance/5-use-robust-practices-and-work-within-your-skillset#reproducibility)
 :::
 
 
