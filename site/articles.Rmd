@@ -20,6 +20,7 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 ::: {.unbulleted-list}
 * [Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/)
 * [Transforming the process of producing official statistics](https://dataingovernment.blog.gov.uk/2017/11/27/transforming-the-process-of-producing-official-statistics/)
+* [Observatory of Public Sector Innovation](https://oecd-opsi.org/innovations/9128/)
 * [A robot by any name?](https://www.statisticsauthority.gov.uk/a-robot-by-any-name/)
 * [GangStaS Data RAP](https://gss.civilservice.gov.uk/blog/gangstas-data-rap/)
 * [RAP champions meet for the first time](https://gss.civilservice.gov.uk/news/rap-champions-meet-for-the-first-time/)
