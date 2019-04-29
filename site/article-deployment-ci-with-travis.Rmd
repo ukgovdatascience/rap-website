@@ -66,6 +66,8 @@ before_install:
     - openssl aes-256-cbc -K $encrypted_516b420c1ae6_key-iv    $encrypted_516b420c1ae6_iv -in deploy_key.enc-out deploy_key -d
 ```
 
+> Note that, with this setup, the decryption will happen for every run of Travis regardless of if you actually need the deployment key. In some scenarios this can be a problem. For example, if you have a pull request from a forked repo, [Travis will not have permission to access the encrypted enviroment variables](https://docs.travis-ci.com/user/pull-requests/#pull-requests-and-security-restrictions) and the build will fail. To get around this, you can move the `openssl` command into a script that only runs when deployment is needed (for example, only when on the master branch `if [[ $TRAVIS_BRANCH == 'master' ]]`).
+
 ### 5. Add the key to GitHub
 
 Add the ssh key to the repository as a deployment key. Find the place to put it on GitHub by navigating to `Repo > Settings > Deploy keys > Add deploy key`. There, paste in the contents of the `deploy_key` file you generated earlier.
