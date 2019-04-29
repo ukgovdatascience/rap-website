@@ -1,15 +1,14 @@
 #!/bin/bash
 
-# Start ssh agent and add key
-eval "$(ssh-agent -s)" # Start the ssh agent
-chmod 600 deploy_key
-ssh-add deploy_key
-
-
 if [[ $TRAVIS_BRANCH == 'master' ]]
 then
   # Decrypt the deploy key
   openssl aes-256-cbc -K $encrypted_516b420c1ae6_key -iv $encrypted_516b420c1ae6_iv -in deploy_key.enc -out deploy_key -d
+
+  # Start ssh agent and add key
+  eval "$(ssh-agent -s)" # Start the ssh agent
+  chmod 600 deploy_key
+  ssh-add deploy_key
 
   # configure your name and email if you have not done so
   git config --global user.email "will@bowdit.ch"
