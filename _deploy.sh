@@ -8,6 +8,9 @@ ssh-add deploy_key
 
 if [[ $TRAVIS_BRANCH == 'master' ]]
 then
+  # Decrypt the deploy key
+  openssl aes-256-cbc -K $encrypted_516b420c1ae6_key -iv $encrypted_516b420c1ae6_iv -in deploy_key.enc -out deploy_key -d
+
   # configure your name and email if you have not done so
   git config --global user.email "will@bowdit.ch"
   git config --global user.name "willbowditch"
