@@ -4,10 +4,6 @@ language: r
 cache:
   packages: true
 
-# Decrypt the deployment key, used to push the result to the repo
-before_install:
- - openssl aes-256-cbc -K $encrypted_516b420c1ae6_key -iv $encrypted_516b420c1ae6_iv -in deploy_key.enc -out deploy_key -d
-
 # Make bash scripts executable, so they can be run later. 
 before_script:
 - chmod +x ./_build.sh
