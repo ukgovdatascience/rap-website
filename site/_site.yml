@@ -1,22 +1,22 @@
 output_dir: docs
 navbar:
-  logo: "images/warp-pipe-white-on-transparent.svg"
-  title: "RAP"
-  homepage: "https://ukgovdatascience.github.io/rap-website"
-  service_name: "Reproducible Analytical Pipelines"
-  links:
-    - text: "Home"
-      href: index.html
-    - text: "Companion"
-      href: companion-index.html
-    - text: "Articles"
-      href: articles.html
-    - text: "Resources"
-      href: resources.html
+  - text: "Home"
+    href: index.html
+  - text: "Companion"
+    href: companion-index.html
+  - text: "Articles"
+    href: articles.html
+  - text: "Resources"
+    href: resources.html
 output:
   govdown::govdown_document:
     font: "sans-serif"
+    favicon: "custom"
+    logo: "images/warp-pipe-white-on-transparent.svg"
+    logo_url: "https://ukgovdatascience.github.io/rap-website"
+    logo_text: "RAP"
+    page_title: "Reproducible Analytical Pipelines"
+    title: "Reproducible Analytical Pipelines"
     phase: alpha
     feedback_url: "https://github.com/ukgovdatascience/rap-website/issues"
-    favicon: "custom"
     google_analytics: "UA-45097885-12"
