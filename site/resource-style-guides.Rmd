@@ -20,6 +20,7 @@ Here are some style guides used in the UK Civil Service.
 
 * [Ministry of Justice Analytical Services Coding Standards](https://github.com/moj-analytical-services/our-coding-standards)
 * [Data Science Campus Coding Standards](https://datasciencecampus.github.io/coding-standards/)
+* [Public Health and Intelligence R Style Guide](https://github.com/Health-SocialCare-Scotland/R-Resources/blob/master/PHI%20R%20style%20guide.md)
 
 Best practices are more about what code you write than how you write it.  For
 example, there are many ways to access databases, but one particular way might
