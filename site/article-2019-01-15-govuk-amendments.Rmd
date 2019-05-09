@@ -296,7 +296,7 @@ changes %>%
   ggtitle("Amendments as a percentage of all changes (monthly)")
 ```
 
-#' ### Amendments as percentage of all changes per year
+### Amendments as percentage of all changes per year
 
 ```{r amendments-percent-per-year}
 changes %>%
