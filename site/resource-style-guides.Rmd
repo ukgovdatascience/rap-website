@@ -9,6 +9,8 @@
 > butitsuremakesthingseasiertoread. -- [The Tidyverse Style
 > Guide](https://style.tidyverse.org/) by Hadley Wickham
 
+## Style guides
+
 It is easier to write and review code that conforms to a familiar style.
 
 There is no one true style guide for every domain because some things are only
@@ -21,6 +23,33 @@ Here are some style guides used in the UK Civil Service.
 * [Ministry of Justice Analytical Services Coding Standards](https://github.com/moj-analytical-services/our-coding-standards)
 * [Data Science Campus Coding Standards](https://datasciencecampus.github.io/coding-standards/)
 * [Public Health and Intelligence R Style Guide](https://github.com/Health-SocialCare-Scotland/R-Resources/blob/master/PHI%20R%20style%20guide.md)
+
+There are tools to help you keep to a style guide in most programming
+languages and IDEs (integrated development environment).  Here are some
+examples.
+
+### R tools
+
+* [lintr](https://github.com/jimhester/lintr) (R package)
+* [styler](https://styler.r-lib.org/) (R package)
+* [RStudio](https://www.rstudio.com/) (R and Python IDE)
+
+### Python tools
+
+* [black](https://github.com/python/black) (Python package)
+* [YAPF](https://github.com/google/yapf) (Python package)
+* [pylint](http://pylint.pycqa.org/en/latest/) (Python package)
+* [flake8](http://flake8.pycqa.org/en/latest/) (Python package)
+* [PyCharm](https://www.jetbrains.com/pycharm/) (Python IDE)
+* [Spyder](https://www.spyder-ide.org/) (Python IDE)
+
+Some of those tools are also available for Jupyter notebooks.
+
+The [flake8](http://flake8.pycqa.org/en/latest/) package also sets a limit on
+function complexity, using the McCabe method.
+
+
+## Best practices
 
 Best practices are more about what code you write than how you write it.  For
 example, there are many ways to access databases, but one particular way might
