@@ -13,6 +13,7 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 * [Infrastructure for RAP](./article-infrastructure.html)
 * [Why take a more sophisticated approach to building your pipeline?](./article-why-take-more-sophisticated-approaches.html)
 * [Deployment with Travis](article-deployment-ci-with-travis.html)
+* [Levels of RAP discussion](article-rap-levels-discussion.html)
 :::
 
 ## Blog posts
