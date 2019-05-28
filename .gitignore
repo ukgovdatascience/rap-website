@@ -5,3 +5,5 @@ packrat/lib*/
 site/*_cache/
 site/*_files/
 site/docs/
+.Rproj.user
+*.Rproj
