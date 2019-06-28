@@ -17,6 +17,6 @@ output:
     logo_text: "RAP"
     page_title: "Reproducible Analytical Pipelines"
     title: "Reproducible Analytical Pipelines"
-    phase: alpha
+    phase: beta
     feedback_url: "https://github.com/ukgovdatascience/rap-website/issues"
     google_analytics: "UA-45097885-12"
