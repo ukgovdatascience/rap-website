@@ -17,8 +17,9 @@ website.
 The [RAP Champions
 network](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions)
 is coordinated by the Government Statistical Service, who maintain a list of
-people to contact for help, a list of examples of RAP projects, and links to
-blog posts, guides and courses.
+people to contact for help, [a list of examples of RAP projects](
+https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/#rap-examples),
+and links to blog posts, guides and courses.
 
 ## Contribute to this website
 
