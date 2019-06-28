@@ -33,6 +33,6 @@ Table: Coffee and coding groups
 | Department of Health and Social Care | | https://www.eventbrite.co.uk/e/health-r-coding-club-tickets-52481515626 | All events are arranged via the eventbrite link. |
 | Department for Transport | https://github.com/departmentfortransport/coffee-and-coding | coffee.coding@dft.gov.uk |  |
 | Ministry of Defence | Internal GitLab | Charlie Willis charles.wills106@mod.uk | Usually once a month on Friday mornings |
-| Ministry of Justice (MoJ) | https://github.com/moj-analytical-services/Coffee-and-Coding | Coffee-and-Coding@justice.gov.uk | Only members of the GitHub moj-analytical-services organisation can access the GitHub repository. The coffee and coding team doesn’t have the ability to add anyone to the organisation. |
+| Ministry of Justice (MoJ) | https://github.com/moj-analytical-services/coffee-and-coding-public | Coffee-and-Coding@justice.gov.uk | Only members of the GitHub moj-analytical-services organisation can access the GitHub repository. The coffee and coding team doesn’t have the ability to add anyone to the organisation. |
 | Office for National Statistics Data Science Campus | https://github.com/datasciencecampus/coffee-and-coding |  |  |
 | Ministry of Housing Communities and Local Government | Internal Microsoft Teams site 'Coffee & Coding Public' | Jennifer Harris jennifer.harris@communities.gov.uk or Lee Murray lee.murray@communities.gov.uk | Roughly fortnightly on Monday afternoon's, held in 2 Marsham Street, London |
