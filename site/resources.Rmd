@@ -10,6 +10,7 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 ::: {.unbulleted-list}
 * [RAP Online Course](https://www.udemy.com/reproducible-analytical-pipelines/)
 * [Case Study: Benefits of RAP](resource-case-study-benefits-2017.html)
+* [How to choose tools and infrastructure](https://www.gov.uk/guidance/choose-tools-and-infrastructure-to-make-better-use-of-your-data)
 * [How to ask for help on Slack](resource-ask-for-help-on-slack.html)
 * [Learn at Coffee and Coding sessions](resource-coffee-and-coding.html)
 * [NHS NSS Transforming Publications Toolkit](resource-nhs-nss-transforming-publications-toolkit.html)
