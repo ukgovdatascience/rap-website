@@ -35,4 +35,4 @@ Table: Coffee and coding groups
 | Ministry of Defence | Internal GitLab | Charlie Willis charles.wills106@mod.uk | Usually once a month on Friday mornings |
 | Ministry of Justice (MoJ) | https://github.com/moj-analytical-services/coffee-and-coding-public | Coffee-and-Coding@justice.gov.uk |  |
 | Office for National Statistics Data Science Campus | https://github.com/datasciencecampus/coffee-and-coding |  |  |
-| Ministry of Housing Communities and Local Government | Internal Microsoft Teams site 'Coffee & Coding Public' | Jennifer Harris jennifer.harris@communities.gov.uk or Lee Murray lee.murray@communities.gov.uk | Roughly fortnightly on Monday afternoon's, held in 2 Marsham Street, London |
+| Ministry of Housing Communities and Local Government | Internal Microsoft Teams site 'Coffee & Coding Public' | coffeeandcoding@communities.gov.uk | Roughly fortnightly on Monday afternoon's, held in 2 Marsham Street, London |
