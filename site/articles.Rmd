@@ -14,6 +14,7 @@ GitHub](https://github.com/ukgovdatascience/rap-website/issues).
 * [Why take a more sophisticated approach to building your pipeline?](./article-why-take-more-sophisticated-approaches.html)
 * [Deployment with Travis](article-deployment-ci-with-travis.html)
 * [Levels of RAP discussion](article-rap-levels-discussion.html)
+* [RAP workflow management with {drake} for R](https://www.rostrum.blog/2019/07/23/can-drake-rap/) (see also a [demo repo](https://github.com/matt-dray/drake-egg-rap) and [slides](https://github.com/matt-dray/drake-egg-rap/blob/master/docs/drake-presentation.pdf))
 :::
 
 ## Blog posts
