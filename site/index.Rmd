@@ -1,7 +1,9 @@
 # RAP: Reproducible Analytical Pipelines
 
 The Reproducible Analytical Pipeline (RAP) is a methodology for automating the
-bulk of steps involved in creating a statistical report.
+bulk of steps involved in creating a statistical report.  It is part of the [GSS
+Quality Statistics in Government
+Guidance](https://gss.civilservice.gov.uk/policy-store/quality-statistics-in-government/#reproducible-analytical-pipelines-rap-).
 
 RAP is also a community of people who work with data using methods adapted from
 software development.  The RAP community promotes the use of programming
