@@ -22,12 +22,13 @@ Some sessions are live-streamed and recorded.  Contact presenters or organisers
 for material (videos, slides, notes) that isn't publicly available -- it might
 be possible for them to share it with you directly.
 
-Offers to present sessions in other deparments are often gratefully accepted.
+Offers to present sessions in other departments are often gratefully accepted.
 
 Table: Coffee and coding groups
 
 | Organisation | Resources | Contact | Notes |
 |--------------|-----------|---------|-------|
+| Cabinet Office | [Website](https://co-analysis.github.io/co-coffee-and-coding/) and [GitHub](https://github.com/co-analysis/co-coffee-and-coding) | coffee-and-coding@cabinetoffice.gov.uk | Every two weeks on Fridays from 10.15 to 11.15, Horse Guards Road and Google Hangouts |
 | Department for Business, Energy and Industrial Strategy | `W:/TRAINSHARE` on CBAS (open only to CBAS users in BEIS and partner orgs) | coffeeandcoding@beis.gov.uk | Weekly at 10-11am on Wednesdays, open to all |
 | Department for Education | https://github.com/dfe-analytical-services/coffee-and-coding | coffee.coding@education.gov.uk | Sessions are usually held on every other Wednesday morning from 10-11AM. Rooms are booked for the London, Sheffield, and Darlington offices. |
 | Department of Health and Social Care | | https://www.eventbrite.co.uk/e/health-r-coding-club-tickets-52481515626 | All events are arranged via the eventbrite link. |
