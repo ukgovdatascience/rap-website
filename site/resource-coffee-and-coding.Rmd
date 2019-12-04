@@ -37,5 +37,6 @@ Table: Coffee and coding groups
 | Ministry of Housing Communities and Local Government | Internal Microsoft Teams site 'Coffee & Coding Public' | coffeeandcoding@communities.gov.uk | Roughly fortnightly on Monday afternoon's, held in 2 Marsham Street, London |
 | Ministry of Justice (MoJ) | https://github.com/moj-analytical-services/coffee-and-coding-public | Coffee-and-Coding@justice.gov.uk |  |
 | Office for National Statistics Data Science Campus | https://github.com/datasciencecampus/coffee-and-coding | coffee.coding@ons.gov.uk | Monthly |
+| UK Hydrographic Office | https://github.com/UKHO/coffee-and-code | coffee-and-code@ukho.gov.uk | Sessions held every Wednesday morning 9-10am at the UK Hydrographic Office, Taunton |
 
 [Edit this page on GitHub](https://github.com/ukgovdatascience/rap-website/edit/master/site/resource-coffee-and-coding.Rmd)
