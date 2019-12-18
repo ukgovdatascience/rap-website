@@ -33,6 +33,7 @@ Table: Coffee and coding groups
 | Department for Education | https://github.com/dfe-analytical-services/coffee-and-coding | coffee.coding@education.gov.uk | Sessions are usually held on every other Wednesday morning from 10-11AM. Rooms are booked for the London, Sheffield, and Darlington offices. |
 | Department of Health and Social Care | | https://www.eventbrite.co.uk/e/health-r-coding-club-tickets-52481515626 | All events are arranged via the eventbrite link. |
 | Department for Transport | https://github.com/departmentfortransport/coffee-and-coding | coffee.coding@dft.gov.uk |  |
+| HM Revenue and Customs (HMRC) |  | alice.whiteway@hmrc.gov.uk | Sessions happen in London, Manchester, Newcastle and Liverpool |
 | Ministry of Defence | Internal GitLab | Charlie Willis charles.wills106@mod.uk | Usually once a month on Friday mornings |
 | Ministry of Housing Communities and Local Government | Internal Microsoft Teams site 'Coffee & Coding Public' | coffeeandcoding@communities.gov.uk | Roughly fortnightly on Monday afternoon's, held in 2 Marsham Street, London |
 | Ministry of Justice (MoJ) | https://github.com/moj-analytical-services/coffee-and-coding-public | Coffee-and-Coding@justice.gov.uk |  |
