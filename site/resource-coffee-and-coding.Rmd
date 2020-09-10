@@ -31,7 +31,7 @@ Table: Coffee and coding groups
 | Cabinet Office | [Website](https://co-analysis.github.io/co-coffee-and-coding/) and [GitHub](https://github.com/co-analysis/co-coffee-and-coding) | coffee-and-coding@cabinetoffice.gov.uk | Every two weeks on Fridays from 10.15 to 11.15, Horse Guards Road and Google Hangouts |
 | Department for Business, Energy and Industrial Strategy | `W:/TRAINSHARE` on CBAS (open only to CBAS users in BEIS and partner orgs) | coffeeandcoding@beis.gov.uk | Weekly at 10-11am on Wednesdays, open to all |
 | Department for Education | https://github.com/dfe-analytical-services/coffee-and-coding | coffee.coding@education.gov.uk | Sessions are usually held on every other Wednesday morning from 10-11AM. Rooms are booked for the London, Sheffield, and Darlington offices. |
-| Department of Health and Social Care | | https://www.eventbrite.co.uk/e/health-r-coding-club-tickets-52481515626 | All events are arranged via the eventbrite link. |
+| Department of Health and Social Care | https://github.com/DataS-DHSC/coffee-and-coding | DataScience@dhsc.gov.uk | Workshop every other Thursday 10-11, held via MS Teams |
 | Department for Transport | https://github.com/departmentfortransport/coffee-and-coding | coffee.coding@dft.gov.uk |  |
 | HM Revenue and Customs (HMRC) |  | alice.whiteway@hmrc.gov.uk | Sessions happen in London, Manchester, Newcastle and Liverpool |
 | Ministry of Defence | Internal GitLab | Charlie Willis charles.wills106@mod.uk | Usually once a month on Friday mornings |
